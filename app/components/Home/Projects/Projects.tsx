@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Projects = () => {
@@ -10,26 +11,34 @@ const Projects = () => {
       </h1>
       <div className="w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
         <div>
-          <Image
-            src="/images/project-1.png"
-            width={800}
-            height={650}
-            className="rounded-lg"
-            alt={"project-image"}
-          />
+          <Link href="https://open-ai-podf.vercel.app/">
+            <Image
+              src="/images/project-1.png"
+              width={800}
+              height={650}
+              className="rounded-lg"
+              alt={"project-image"}
+            />
+          </Link>
           <h1 className="mt-4 text-xl sm:text-2xl font-semibold text-white">
             Modern Video Call AI Assistant
           </h1>
           <h1 className="pt-2 font-medium text-white/80">Apps, UI / UX</h1>
         </div>
         <div>
-          <Image
-            src="/images/project-2.png"
-            width={800}
-            height={650}
-            className="rounded-lg"
-            alt={"project-image"}
-          />
+          <Link href="https://echo-web-git-master-tsvetan-markovs-projects.vercel.app/conversations">
+            <Image
+              src="/images/echo.png"
+              width={800}
+              height={650}
+              className="rounded-lg"
+              alt={"project-image"}
+            />
+          </Link>
+          <h1 className="mt-4 text-xl sm:text-2xl font-semibold text-white">
+            Modern AI Chat and Video Call Assistant
+          </h1>
+          <h1 className="pt-2 font-medium text-white/80">Apps, UI / UX</h1>
         </div>
       </div>
     </div>
