@@ -3,7 +3,7 @@ import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   return (
-    <div className="pt-10 pb-10">
+    <div id="services" className="pt-10 pb-10">
       <h1 className="text-white text-center text-2xl md:text-4xl xl:text-5xl font-bold">
         Colaborate with brand <br /> and agencies to create <br /> impactfull
         results

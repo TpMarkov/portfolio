@@ -13,6 +13,20 @@ type Props = {
 const Nav = ({ openNav }: Props) => {
   const [navBg, setNavBg] = useState(false);
 
+  // TODO: Change this with actual url when deploying - keep the /resume.pdf part of the url when replacing
+  const PDF_FILE_URL = "http://localhost:3000/resume/resume.pdf";
+
+  const downloadFileAtURL = (url: string) => {
+    const fileName = url.split("/").pop() as string;
+
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
+
   useEffect(() => {
     const handler = () => {
       if (window.scrollY >= 90) setNavBg(true);
@@ -48,11 +62,19 @@ const Nav = ({ openNav }: Props) => {
           ))}
         </div>
         <div className="flex items-center space-x-4">
-          <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-700 hover:bg-blue-800 transition-all duration-300 text-white flex items-center space-x-2">
-            <div className="w-full flex items-center gap-x-5">
-              <FaDownload />
-              Download CV
-            </div>
+          <button
+            className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-700 hover:bg-blue-800 transition-all duration-300 text-white flex items-center space-x-2"
+            onClick={(e) => {
+              e.preventDefault();
+              return downloadFileAtURL(PDF_FILE_URL);
+            }}
+          >
+            <Link href="https://app.enhancv.com/share/89888e8a/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic">
+              <div className="w-full flex items-center gap-x-5">
+                <FaDownload />
+                Download CV
+              </div>
+            </Link>
           </button>
           {/* Burger menu */}
           <HiMenuAlt3

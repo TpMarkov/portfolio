@@ -1,5 +1,9 @@
 export const projects = [
-
+  {
+    title: "NextPro Blog Platform",
+    url: "https://nextpro-blog.vercel.app",
+    img: "/images/NextPro (Large).png",
+  },
   {
     title: "Modern Video Call AI Assistant",
     url: "https://open-ai-podf.vercel.app/",
@@ -25,5 +29,4 @@ export const projects = [
     url: "https://nodebase-workflow.vercel.app/",
     img: "/images/nodebase (Large).png",
   },
-
 ];
