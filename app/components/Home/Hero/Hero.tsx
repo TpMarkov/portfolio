@@ -4,6 +4,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { FaArrowRight } from "react-icons/fa";
 import ParticlesHero from "./ParticleBackground";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -46,7 +47,9 @@ const Hero = () => {
           </span>
         </h2>
         <button className="rounded-full transition-all duration-300 cursor-pointer font-medium mt-6 px-10 py-4 bg-blue-800 hover:bg-blue-900">
-          <span>See my work</span>
+          <Link href="#projects">
+            <span>See my work</span>
+          </Link>
           <FaArrowRight className="inline h-4 ml-2" />
         </button>
       </div>

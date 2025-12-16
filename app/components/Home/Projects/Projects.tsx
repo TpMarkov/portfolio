@@ -11,7 +11,7 @@ const Projects = () => {
         <span className="text-cyan-300">projects</span>
       </h2>
 
-      <div className="w-[85%] md:w-[75%] xl:w-[60%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mt-16">
+      <div className="w-[85%] md:w-[75%] xl:w-[60%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mt-16 cursor-pointer">
         {projects.reverse().map((project, index) => (
           <article
             key={index}
