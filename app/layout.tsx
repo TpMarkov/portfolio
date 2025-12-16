@@ -9,8 +9,8 @@ const font = Inter({
 });
 
 export const metadat: Metadata = {
-  title: "Tsvetan Portfolio | Next.js 15",
-  description: "Portfolio built with Next.js 15",
+  title: "Tsvetan Portfolio | Next.js 16",
+  description: "Portfolio built with Next.js 16",
 };
 
 export default function RootLayout({
