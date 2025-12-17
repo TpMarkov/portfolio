@@ -1,5 +1,10 @@
 export const projects = [
   {
+    title: "A High-Performance Animated Portfolio Showcase",
+    url: "https://gsap-mojito-five.vercel.app",
+    img: "https://i.ibb.co/0p9GjgFm/home.png",
+  },
+  {
     title: "NextPro Blog Platform",
     url: "https://nextpro-blog.vercel.app",
     img: "/images/NextPro (Large).png",
