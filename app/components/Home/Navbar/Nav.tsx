@@ -14,7 +14,8 @@ const Nav = ({ openNav }: Props) => {
   const [navBg, setNavBg] = useState(false);
 
   // TODO: Change this with actual url when deploying - keep the /resume.pdf part of the url when replacing
-  const PDF_FILE_URL = "https://portfolio-xi-umber-iqmksi764o.vercel.app/resume.pdf";
+  const PDF_FILE_URL =
+    "https://portfolio-xi-umber-iqmksi764o.vercel.app/resume/resume.pdf";
 
   const downloadFileAtURL = (url: string) => {
     const fileName = url.split("/").pop() as string;
