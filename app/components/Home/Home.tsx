@@ -15,7 +15,6 @@ const Home = () => {
       <Resume />
       <Projects />
       <Skills />
-      <ClientReview />
       <Blog />
     </div>
   );
