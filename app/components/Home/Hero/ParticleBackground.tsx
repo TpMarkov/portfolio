@@ -10,12 +10,14 @@ import {
   OutMode,
 } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
-
-// Need to install @tsparticles/react , @tsparticles/engine and @tsparticles/slim packages
-// npm install @tsparticles/react @tsparticles/engine @tsparticles/slim
+import { useTheme } from "next-themes";
 
 export default function ParticlesHero() {
   const [init, setInit] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  // Need to handle hydration mismatch, wait for mount
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -23,6 +25,7 @@ export default function ParticlesHero() {
     }).then(() => {
       setInit(true);
     });
+    setMounted(true);
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
@@ -32,7 +35,7 @@ export default function ParticlesHero() {
   const options: ISourceOptions = useMemo(
     () => ({
       background: {
-        color: { value: "transparent" }, // Transparent for overlay use
+        color: { value: "transparent" },
       },
       fullScreen: {
         enable: false,
@@ -49,9 +52,9 @@ export default function ParticlesHero() {
         },
       },
       particles: {
-        color: { value: "#ffffff" },
+        color: { value: resolvedTheme === "dark" || !mounted ? "#ffffff" : "#0f172a" },
         links: {
-          color: "#ffffff",
+          color: resolvedTheme === "dark" || !mounted ? "#ffffff" : "#0f172a",
           distance: 150,
           enable: true,
           opacity: 0.4,
@@ -73,7 +76,7 @@ export default function ParticlesHero() {
       },
       detectRetina: true,
     }),
-    []
+    [resolvedTheme, mounted]
   );
 
   if (!init) return null;
