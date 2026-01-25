@@ -14,11 +14,28 @@
     --color-card: var(--card);
     --color-card-foreground: var(--card-foreground);
     --color-border: var(--border);
+
+    --animate-marquee: marquee 40s linear infinite;
+    --animate-marquee-reverse: marquee-reverse 40s linear infinite;
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
 }
 
 @layer utilities {
     .text-balance {
         text-wrap: balance;
+    }
+
+    .pause-on-hover:hover {
+        animation-play-state: paused;
     }
 }
 
