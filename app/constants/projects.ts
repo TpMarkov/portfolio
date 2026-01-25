@@ -1,5 +1,10 @@
 export const projects = [
   {
+    title: "A High-Performance Hair Salon Managment System with Admin Dashboard",
+    url: "https://hair-salon-frontend-rho.vercel.app",
+    img: "/images/large-barnner.png",
+  },
+  {
     title: "A High-Performance Animated Portfolio Showcase",
     url: "https://gsap-mojito-five.vercel.app",
     img: "/images/banner-image (Large).png",
