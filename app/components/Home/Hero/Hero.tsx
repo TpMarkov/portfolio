@@ -1,14 +1,16 @@
 "use client";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Typewriter from "typewriter-effect";
 import { FaArrowRight } from "react-icons/fa";
 import ParticlesHero from "./ParticleBackground";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import QuoteModal from "../../Helper/QuoteModal";
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const containerRef = useRef(null);
   const logoRef = useRef(null);
   const textRef = useRef(null);
@@ -51,6 +53,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center text-foreground overflow-hidden flex-col bg-background py-20"
     >
       <ParticlesHero />
+
       <div className="relative z-10 w-[90%] xl:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Text Content - Spans 7 columns */}
         <div ref={textRef} className="lg:col-span-7 text-left">
@@ -102,18 +105,18 @@ const Hero = () => {
                 </span>
               </button>
             </Link>
-            <Link href="#footer">
-              <button className="px-10 py-5 bg-transparent text-foreground font-black rounded-lg border-2 border-border transition-all duration-300 hover:bg-muted active:scale-95 uppercase tracking-tighter italic">
-                <span>Start Project</span>
-              </button>
-            </Link>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-10 py-5 bg-transparent text-foreground font-black rounded-lg border-2 border-border transition-all duration-300 hover:bg-muted active:scale-95 uppercase tracking-tighter italic cursor-pointer"
+            >
+              <span>Request Quote</span>
+            </button>
           </div>
         </div>
 
         {/* Logo/Asset - Spans 5 columns - Offset for asymmetry */}
         <div ref={logoRef} className="lg:col-span-5 flex justify-center lg:justify-end relative">
           <div className="relative group">
-            {/* Geometric shadow ornament */}
             <div className="absolute -inset-8 border border-primary/10 rounded-2xl rotate-12 transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110"></div>
             <div className="absolute -inset-4 border border-primary/20 rounded-2xl -rotate-6 transition-transform duration-700 group-hover:rotate-0"></div>
 
@@ -131,9 +134,12 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Modal - Root Level */}
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
       {/* Hero Background Ornament - Responsive Optimized */}
       <div
-        className="absolute top-0 right-0 w-full lg:w-[60%] h-[500px] lg:h-[700px] pointer-events-none z-0 opacity-10 lg:opacity-20 dark:opacity-[0.15] lg:dark:opacity-[0.25]"
+        className="absolute top-0 right-0 w-full lg:w-[60%] h-[500px] lg:h-[700px] pointer-events-none z-0 opacity-10 lg:opacity-20 dark:opacity-[0.1] lg:dark:opacity-[0.25]"
         style={{
           maskImage: 'radial-gradient(circle at center, black, transparent 80%)',
           WebkitMaskImage: 'radial-gradient(circle at center, black, transparent 80%)'
