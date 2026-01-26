@@ -14,7 +14,7 @@ const About = () => {
                                     src="/images/image (1).jpg"
                                     alt="Profile"
                                     fill
-                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                    className="object-cover transition-transform duration-700 hover:scale-105"
                                     sizes="(max-width: 768px) 192px, 224px"
                                     priority
                                 />

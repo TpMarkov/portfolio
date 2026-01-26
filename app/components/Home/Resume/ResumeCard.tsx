@@ -10,23 +10,23 @@ interface Props {
 }
 const ResumeCard = ({ role, Icon, date, description, location }: Props) => {
   return (
-    <div className="mb-6">
-      <div className="flex items-start space-x-6 bg-card border border-border transition-all duration-300 p-4 sm:p-8 rounded-md hover:shadow-lg hover:border-primary/50">
-        <div className="sm:w-14 sm:h-14 w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-col shadow-md">
-          <Icon className="sm:w-8 sm:h-8 text-primary-foreground" />
+    <div className="mb-4">
+      <div className="flex items-start space-x-4 bg-card border border-border transition-all duration-300 p-4 sm:p-5 rounded-md hover:shadow-md hover:border-primary/50">
+        <div className="sm:w-10 sm:h-10 w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center flex-col shrink-0">
+          <Icon className="sm:w-5 sm:h-5 text-primary" />
         </div>
         <div className="flex-1">
           {date && (
-            <h1 className="mb-2 sm:px-6 sm:py-1.5 px-4 py-1 rounded-full bg-secondary text-secondary-foreground w-fit sm:text-lg text-sm font-bold">
+            <p className="mb-1 text-xs font-bold text-primary opacity-80">
               {date}
-            </h1>
+            </p>
           )}
-          <h1 className="text-foreground text-xl sm:text-2xl font-semibold">
+          <h1 className="text-foreground text-lg sm:text-xl font-bold">
             {role}
           </h1>
-          <div className="flex items-center gap-2 mt-2">
-            {location && <IoLocationOutline className="text-primary" size={20} />}
-            <p className="text-muted-foreground text-sm sm:text-base">
+          <div className="flex items-center gap-2 mt-1">
+            {location && <IoLocationOutline className="text-muted-foreground" size={14} />}
+            <p className="text-muted-foreground text-xs sm:text-sm">
               {description}
             </p>
           </div>

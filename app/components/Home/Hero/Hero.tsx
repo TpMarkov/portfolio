@@ -60,7 +60,7 @@ const Hero = () => {
               alt="webdevstudioHQ"
               width={120}
               height={120}
-              className="object-contain"
+              className="object-contain grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer"
               priority
             />
           </div>
