@@ -7,6 +7,7 @@ import { TbBrandNodejs } from "react-icons/tb";
 import { SiTailwindcss } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import Tilt from "react-parallax-tilt";
+import Image from "next/image";
 
 const skills = [
   {
@@ -43,8 +44,24 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="pt-32 pb-32 bg-background border-b border-border overflow-hidden">
-      <div className="w-[90%] sm:w-[80%] mx-auto">
+    <section id="skills" className="relative pt-32 pb-32 bg-background border-b border-border overflow-hidden">
+      {/* Background Asset 3 - Abstract Wave - Top Right Asymmetry */}
+      <div
+        className="absolute -top-[10%] -right-[10%] w-[60%] h-[120%] opacity-15 dark:opacity-20 pointer-events-none z-0"
+        style={{
+          maskImage: 'radial-gradient(circle at 70% 30%, black, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(circle at 70% 30%, black, transparent 75%)'
+        }}
+      >
+        <Image
+          src="/background-ornaments/3.png"
+          alt="Skills Background"
+          fill
+          className="object-cover mix-blend-screen dark:mix-blend-overlay rotate-[12deg]"
+        />
+      </div>
+
+      <div className="relative z-10 w-[90%] sm:w-[80%] mx-auto">
         <div className="flex flex-col md:flex-row items-baseline gap-6 mb-20 translate-x-[-1%]">
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-foreground uppercase italic leading-none">
             Stack <span className="text-primary not-italic">&</span> Tools

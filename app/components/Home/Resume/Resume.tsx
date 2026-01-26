@@ -7,19 +7,19 @@ import Image from "next/image";
 const Resume = () => {
   return (
     <section id="resume" className="relative pt-24 pb-24 bg-background border-b border-border overflow-hidden">
-      {/* Background Asset 2 - Grid Tech - Asymmetrical & Faded */}
+      {/* Background Asset 3 - Abstract Wave - Top Right Asymmetry */}
       <div
-        className="absolute -top-[10%] -left-[10%] w-[80%] h-[120%] opacity-[0.08] dark:opacity-[0.12] pointer-events-none z-0"
+        className="absolute -top-[20%] -right-[10%] w-[70%] h-[120%] opacity-15 dark:opacity-20 pointer-events-none z-0"
         style={{
-          maskImage: 'radial-gradient(circle at 20% 40%, black, transparent 75%)',
-          WebkitMaskImage: 'radial-gradient(circle at 20% 40%, black, transparent 75%)'
+          maskImage: 'radial-gradient(circle at 80% 30%, black, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(circle at 80% 30%, black, transparent 75%)'
         }}
       >
         <Image
-          src="/background-ornaments/2.png"
-          alt="Tech Grid"
+          src="/background-ornaments/3.png"
+          alt="Abstract Wave Background"
           fill
-          className="object-cover mix-blend-multiply dark:mix-blend-overlay"
+          className="object-cover mix-blend-screen dark:mix-blend-overlay rotate-[3deg]"
         />
       </div>
 

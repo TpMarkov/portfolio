@@ -131,19 +131,19 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Hero Bottom Transition Ornament */}
+      {/* Hero Background Ornament - Top Right Asymmetry */}
       <div
-        className="absolute bottom-0 left-0 w-full h-[300px] pointer-events-none z-0 opacity-20 dark:opacity-30"
+        className="absolute -top-[10%] -right-[10%] w-[60%] h-[700px] pointer-events-none z-0 opacity-20 dark:opacity-[0.25]"
         style={{
-          maskImage: 'linear-gradient(to top, black, transparent)',
-          WebkitMaskImage: 'linear-gradient(to top, black, transparent)'
+          maskImage: 'radial-gradient(circle at 70% 30%, black, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(circle at 70% 30%, black, transparent 80%)'
         }}
       >
         <Image
           src="/background-ornaments/1.png"
-          alt="Hero Transition"
+          alt="Hero Ornament"
           fill
-          className="object-cover object-bottom mix-blend-screen dark:mix-blend-overlay"
+          className="object-cover object-right-top mix-blend-screen dark:mix-blend-overlay rotate-[5deg]"
         />
       </div>
     </div>
