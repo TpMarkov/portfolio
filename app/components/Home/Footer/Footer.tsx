@@ -28,7 +28,7 @@ const Footer = () => {
         <footer id="footer" className="bg-background border-t border-border mt-0">
             <div className="w-[90%] xl:w-[80%] mx-auto py-20">
                 {/* Top Section */}
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
                     {/* Logo and Brand */}
                     <div className="flex items-center space-x-3">
                         <Image
@@ -48,22 +48,36 @@ const Footer = () => {
                         </div>
                     </div>
 
+                    {/* Quick Links */}
+                    <div className="flex flex-col gap-4">
+                        <h4 className="text-foreground font-black uppercase tracking-widest text-sm">Navigation</h4>
+                        <div className="flex flex-wrap gap-x-8 gap-y-2">
+                            <Link href="/#home" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold uppercase tracking-tighter">Home</Link>
+                            <Link href="/#services" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold uppercase tracking-tighter">Services</Link>
+                            <Link href="/certificates" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold uppercase tracking-tighter">Certificates</Link>
+                            <Link href="/#projects" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold uppercase tracking-tighter">Works</Link>
+                        </div>
+                    </div>
+
                     {/* Social Links */}
-                    <div className="flex items-center gap-4">
-                        {socialLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group p-3 rounded-full bg-secondary hover:bg-primary transition-all duration-300"
-                                aria-label={link.name}
-                            >
-                                <span className="text-secondary-foreground group-hover:text-primary-foreground transition-colors">
-                                    {link.icon}
-                                </span>
-                            </Link>
-                        ))}
+                    <div className="flex flex-col gap-4">
+                        <h4 className="text-foreground font-black uppercase tracking-widest text-sm text-center md:text-right">Social</h4>
+                        <div className="flex items-center gap-4">
+                            {socialLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group p-3 rounded-full bg-secondary hover:bg-primary transition-all duration-300"
+                                    aria-label={link.name}
+                                >
+                                    <span className="text-secondary-foreground group-hover:text-primary-foreground transition-colors">
+                                        {link.icon}
+                                    </span>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

@@ -31,7 +31,7 @@ const About = () => {
 
                             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-border shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
                                 <Image
-                                    src="/images/image (1).jpg"
+                                    src="/images/ID-image.jpg"
                                     alt="Profile"
                                     fill
                                     className="object-cover"
