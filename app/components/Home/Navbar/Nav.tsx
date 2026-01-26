@@ -62,7 +62,7 @@ const Nav = ({ openNav }: Props) => {
         {/* {LOGO} */}
         <div className="flex items-center space-x-2 hover:cursor-pointer">
           <Image width={40} height={40} src="/images/webdevstudiohq-logo.png" alt="webdevstudioHQ logo" className="object-contain" />
-          <h2 className="text-foreground font-bold text-xl uppercase tracking-wider">
+          <h2 className="text-foreground font-bold text-xl uppercase tracking-wider hidden md:block">
             webdevstudio<span className="text-primary">HQ</span>
           </h2>
         </div>

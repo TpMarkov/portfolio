@@ -24,14 +24,10 @@ export const NavLinks = [
     url: "#skills",
     label: "Skills",
   },
-  {
-    id: 6,
-    url: "#reviews",
-    label: "Testimonials",
-  },
+
   {
     id: 7,
-    url: "#",
+    url: "#footer",
     label: "Contact",
   },
 ];
