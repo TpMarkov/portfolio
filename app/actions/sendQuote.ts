@@ -19,7 +19,7 @@ export async function sendQuoteAction(formData: FormData) {
         // 1. Send Notification to webdevstudioHQ
         await resend.emails.send({
             from: "webdevstudioHQ <onboarding@resend.dev>",
-            to: "webdestudiohq@gmail.com",
+            to: "webdevstudiohq@gmail.com",
             subject: "NEW Project Quote Request",
             html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
