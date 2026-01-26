@@ -7,13 +7,19 @@ import Image from "next/image";
 const Resume = () => {
   return (
     <section id="resume" className="relative pt-24 pb-24 bg-background border-b border-border overflow-hidden">
-      {/* Background Asset 2 - Grid Tech */}
-      <div className="absolute inset-0 opacity-[0.05] dark:opacity-10 pointer-events-none z-0">
+      {/* Background Asset 2 - Grid Tech - Asymmetrical & Faded */}
+      <div
+        className="absolute -top-[10%] -left-[10%] w-[80%] h-[120%] opacity-[0.08] dark:opacity-[0.12] pointer-events-none z-0"
+        style={{
+          maskImage: 'radial-gradient(circle at 20% 40%, black, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(circle at 20% 40%, black, transparent 75%)'
+        }}
+      >
         <Image
           src="/background-ornaments/2.png"
           alt="Tech Grid"
           fill
-          className="object-cover"
+          className="object-cover mix-blend-multiply dark:mix-blend-overlay"
         />
       </div>
 

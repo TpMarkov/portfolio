@@ -4,13 +4,19 @@ import React from "react";
 const About = () => {
     return (
         <section className="relative py-32 bg-secondary/50 border-y border-border overflow-hidden">
-            {/* Background Asset 4 - Global Tech */}
-            <div className="absolute top-0 right-0 h-full w-[40%] opacity-[0.08] dark:opacity-15 pointer-events-none z-0">
+            {/* Background Asset 4 - Global Tech - Asymmetrical & Faded */}
+            <div
+                className="absolute -top-10 -right-20 h-[120%] w-[50%] opacity-[0.1] dark:opacity-20 pointer-events-none z-0"
+                style={{
+                    maskImage: 'radial-gradient(circle at 60% 50%, black, transparent 80%)',
+                    WebkitMaskImage: 'radial-gradient(circle at 60% 50%, black, transparent 80%)'
+                }}
+            >
                 <Image
                     src="/background-ornaments/4.png"
                     alt="Global Tech"
                     fill
-                    className="object-contain object-right"
+                    className="object-contain object-right mix-blend-lighten dark:mix-blend-overlay"
                 />
             </div>
             <div className="relative z-10 w-[90%] xl:w-[80%] mx-auto">

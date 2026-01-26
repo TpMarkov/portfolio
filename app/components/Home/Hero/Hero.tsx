@@ -130,6 +130,22 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Hero Bottom Transition Ornament */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-[300px] pointer-events-none z-0 opacity-20 dark:opacity-30"
+        style={{
+          maskImage: 'linear-gradient(to top, black, transparent)',
+          WebkitMaskImage: 'linear-gradient(to top, black, transparent)'
+        }}
+      >
+        <Image
+          src="/background-ornaments/1.png"
+          alt="Hero Transition"
+          fill
+          className="object-cover object-bottom mix-blend-screen dark:mix-blend-overlay"
+        />
+      </div>
     </div>
   );
 };
