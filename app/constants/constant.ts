@@ -51,7 +51,7 @@ export const CERTIFICATES = [
     title: "Advanced THREE.JS Certificate",
     issuer: "Udemy",
     image: "/certificates/udemy-certificate.png",
-    date: "2025",
+    date: "2026",
   },
 ];
 
