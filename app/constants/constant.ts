@@ -36,37 +36,35 @@ export const NavLinks = [
   },
 ];
 
+//TODO-ADD SoftUni Certificates
+
 export const CERTIFICATES = [
   {
     id: 1,
-    title: "Full Stack Development Certificate",
-    issuer: "Coursera / IBM",
-    image: "/images/certificates/placeholder.jpg",
-    date: "2024",
+    title: "Full Stack Development Certificate React & Node.js",
+    issuer: "Telerik Academy",
+    image: "/certificates/telerik-academy-certificate.png",
+    date: "2025",
   },
   {
     id: 2,
-    title: "Advanced React & Next.js",
-    issuer: "Udemy / Vercel",
-    image: "/images/certificates/placeholder.jpg",
-    date: "2024",
+    title: "Advanced THREE.JS Certificate",
+    issuer: "Udemy",
+    image: "/certificates/udemy-certificate.png",
+    date: "2025",
   },
 ];
 
 export const ISSUERS = [
   {
     id: 1,
-    name: "Coursera",
-    logo: "/images/issuers/coursera.png",
+    name: "Udemy",
+    logo: "/logos/udemy-logo.png",
   },
   {
     id: 2,
-    name: "IBM",
-    logo: "/images/issuers/ibm.png",
+    name: "Telerik Academy",
+    logo: "/logos/teleric-academy.png",
   },
-  {
-    id: 3,
-    name: "Udemy",
-    logo: "/images/issuers/udemy.png",
-  },
+
 ];

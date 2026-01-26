@@ -31,14 +31,23 @@ const IssuerSection = () => {
                         {ISSUERS.map((issuer) => (
                             <div
                                 key={issuer.id}
-                                className="group relative grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-110"
+                                className="group relative transition-all duration-500 transform hover:scale-105"
                             >
-                                <div className="p-4 bg-card/50 backdrop-blur-sm border border-transparent group-hover:border-primary/20 rounded-xl transition-all">
-                                    <div className="relative w-24 h-12 md:w-32 md:h-16">
-                                        {/* Placeholder icon if logo not found, using text as logo for now */}
-                                        <div className="absolute inset-0 flex items-center justify-center font-black text-xl tracking-tighter text-muted-foreground group-hover:text-primary transition-colors">
-                                            {issuer.name}
-                                        </div>
+                                <div className="p-8 bg-card/70 backdrop-blur-md border border-border/50 group-hover:border-primary/30 rounded-2xl transition-all w-48 h-24 md:w-64 md:h-32 flex items-center justify-center shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                                    <div className="relative w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+                                        {issuer.logo ? (
+                                            <Image
+                                                src={issuer.logo}
+                                                alt={issuer.name}
+                                                fill
+                                                className="object-contain dark:invert-25 contrast-200"
+                                                sizes="(max-width: 768px) 150px, 200px"
+                                            />
+                                        ) : (
+                                            <div className="absolute inset-0 flex items-center justify-center font-black text-2xl tracking-tighter text-muted-foreground group-hover:text-primary transition-all duration-300 text-center uppercase italic">
+                                                {issuer.name}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
