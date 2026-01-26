@@ -41,44 +41,62 @@
 
 :root {
     --background: #ffffff;
-    --foreground: #020617; /* Slate 950 */
+    --foreground: #020617;
+    /* Slate 950 */
 
-    --primary: #2563eb; /* Blue 600 - Clean, Trustworthy */
+    --primary: #2563eb;
+    /* Blue 600 - Clean, Trustworthy */
     --primary-foreground: #ffffff;
 
-    --secondary: #f8fafc; /* Slate 50 */
+    --secondary: #f8fafc;
+    /* Slate 50 */
     --secondary-foreground: #0f172a;
 
-    --accent: #f1f5f9; /* Slate 100 */
+    --accent: #f1f5f9;
+    /* Slate 100 */
     --accent-foreground: #0f172a;
 
     --muted: #f1f5f9;
-    --muted-foreground: #475569; /* Slate 600 */
+    --muted-foreground: #475569;
+    /* Slate 600 */
 
     --card: #ffffff;
     --card-foreground: #020617;
 
     --border: #e2e8f0;
+
+    /* --- DEVELOPER SETTINGS: ZOOM CONTROL --- */
+    /* Presets: 
+       0.75 = 75% Zoom
+       0.85 = 85% Zoom (Current Default)
+       1.0  = 100% Zoom (Standard)
+    */
+    --app-zoom: 1;
 }
 
 /* Dark mode overrides - Clean Slate/Navy approach */
 .dark {
-    --background: #020617; /* Slate 950 */
+    --background: #020617;
+    /* Slate 950 */
     --foreground: #f8fafc;
 
-    --primary: #3b82f6; /* Blue 500 */
+    --primary: #3b82f6;
+    /* Blue 500 */
     --primary-foreground: #ffffff;
 
-    --secondary: #0f172a; /* Slate 900 */
+    --secondary: #0f172a;
+    /* Slate 900 */
     --secondary-foreground: #f8fafc;
 
-    --accent: #1e293b; /* Slate 800 */
+    --accent: #1e293b;
+    /* Slate 800 */
     --accent-foreground: #f8fafc;
 
     --muted: #1e293b;
     --muted-foreground: #94a3b8;
 
-    --card: #0f172a; /* Slate 900 */
+    --card: #0f172a;
+    /* Slate 900 */
     --card-foreground: #f8fafc;
 
     --border: #1e293b;
@@ -86,4 +104,10 @@
 
 html {
     scroll-behavior: smooth;
+    zoom: var(--app-zoom);
+}
+
+#home {
+    /* Dynamically calculate min-height to ensure hero always takes 100% of physical viewport */
+    min-height: calc(100vh / var(--app-zoom)) !important;
 }
