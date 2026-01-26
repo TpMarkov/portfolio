@@ -111,3 +111,49 @@ html {
     /* Dynamically calculate min-height to ensure hero always takes 100% of physical viewport */
     min-height: calc(100vh / var(--app-zoom)) !important;
 }
+
+/* Usercentrics Privacy Policy Styling Overrides */
+.uc-privacy-policy {
+    font-family: inherit;
+    line-height: 1.6;
+}
+
+.uc-privacy-policy h1,
+.uc-privacy-policy h2,
+.uc-privacy-policy h3,
+.uc-privacy-policy h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+}
+
+.uc-privacy-policy p,
+.uc-privacy-policy li {
+    margin-bottom: 1rem;
+    color: var(--muted-foreground);
+}
+
+.dark .uc-privacy-policy h1,
+.dark .uc-privacy-policy h2,
+.dark .uc-privacy-policy h3,
+.dark .uc-privacy-policy h4 {
+    color: var(--foreground) !important;
+}
+
+.dark .uc-privacy-policy p,
+.dark .uc-privacy-policy li,
+.dark .uc-privacy-policy div {
+    color: var(--muted-foreground) !important;
+}
+
+.dark .uc-privacy-policy a {
+    color: var(--primary) !important;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.dark .uc-privacy-policy strong {
+    color: var(--foreground) !important;
+}
