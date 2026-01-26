@@ -45,19 +45,19 @@ const skills = [
 const Skills = () => {
   return (
     <section id="skills" className="relative pt-32 pb-32 bg-background border-b border-border overflow-hidden">
-      {/* Background Asset 3 - Abstract Wave - Top Right Asymmetry */}
+      {/* Background Asset 3 - Abstract Wave - Responsive Optimized */}
       <div
-        className="absolute -top-[10%] -right-[10%] w-[60%] h-[120%] opacity-15 dark:opacity-20 pointer-events-none z-0"
+        className="absolute top-0 right-0 w-full lg:w-[60%] h-full lg:h-[120%] opacity-10 lg:opacity-15 dark:opacity-15 lg:dark:opacity-20 pointer-events-none z-0"
         style={{
-          maskImage: 'radial-gradient(circle at 70% 30%, black, transparent 75%)',
-          WebkitMaskImage: 'radial-gradient(circle at 70% 30%, black, transparent 75%)'
+          maskImage: 'radial-gradient(circle at center, black, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, black, transparent 75%)'
         }}
       >
         <Image
           src="/background-ornaments/3.png"
           alt="Skills Background"
           fill
-          className="object-cover mix-blend-screen dark:mix-blend-overlay rotate-[12deg]"
+          className="object-cover object-center lg:object-right mix-blend-screen dark:mix-blend-overlay rotate-[12deg]"
         />
       </div>
 

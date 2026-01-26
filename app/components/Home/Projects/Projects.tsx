@@ -48,19 +48,19 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative pt-32 pb-32 bg-secondary/50 border-y border-border overflow-hidden">
-      {/* Background Asset 4 - Global Tech - Bottom Left Asymmetry */}
+      {/* Background Asset 4 - Global Tech - Responsive Optimized */}
       <div
-        className="absolute -bottom-[10%] -left-[10%] w-[50%] h-[120%] opacity-[0.1] dark:opacity-20 pointer-events-none z-0"
+        className="absolute bottom-0 left-0 w-full lg:w-[50%] h-full lg:h-[120%] opacity-[0.05] lg:opacity-[0.1] dark:opacity-[0.1] lg:dark:opacity-20 pointer-events-none z-0"
         style={{
-          maskImage: 'radial-gradient(circle at 30% 70%, black, transparent 80%)',
-          WebkitMaskImage: 'radial-gradient(circle at 30% 70%, black, transparent 80%)'
+          maskImage: 'radial-gradient(circle at center, black, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, black, transparent 80%)'
         }}
       >
         <Image
           src="/background-ornaments/4.png"
           alt="Global Tech Background"
           fill
-          className="object-contain object-left-bottom mix-blend-lighten dark:mix-blend-overlay -rotate-12"
+          className="object-contain object-center lg:object-left-bottom mix-blend-lighten dark:mix-blend-overlay -rotate-12"
         />
       </div>
 

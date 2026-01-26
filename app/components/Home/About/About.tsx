@@ -4,19 +4,19 @@ import React from "react";
 const About = () => {
     return (
         <section className="relative py-32 bg-secondary/50 border-y border-border overflow-hidden">
-            {/* Background Asset 1 - Blue Waves - Bottom Left Asymmetry */}
+            {/* Background Asset 1 - Blue Waves - Responsive Optimized */}
             <div
-                className="absolute -bottom-[20%] -left-[10%] h-[120%] w-[70%] opacity-20 dark:opacity-[0.25] pointer-events-none z-0"
+                className="absolute bottom-0 left-0 w-full lg:w-[70%] h-full lg:h-[120%] opacity-10 lg:opacity-20 dark:opacity-15 lg:dark:opacity-[0.25] pointer-events-none z-0"
                 style={{
-                    maskImage: 'radial-gradient(circle at 30% 70%, black, transparent 80%)',
-                    WebkitMaskImage: 'radial-gradient(circle at 30% 70%, black, transparent 80%)'
+                    maskImage: 'radial-gradient(circle at center, black, transparent 80%)',
+                    WebkitMaskImage: 'radial-gradient(circle at center, black, transparent 80%)'
                 }}
             >
                 <Image
                     src="/background-ornaments/1.png"
                     alt="Blue Waves Background"
                     fill
-                    className="object-cover object-left-bottom mix-blend-screen dark:mix-blend-overlay -rotate-12"
+                    className="object-cover object-center lg:object-left-bottom mix-blend-screen dark:mix-blend-overlay -rotate-12"
                 />
             </div>
             <div className="relative z-10 w-[90%] xl:w-[80%] mx-auto">

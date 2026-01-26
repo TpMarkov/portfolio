@@ -5,19 +5,19 @@ import Image from "next/image";
 const Services = () => {
   return (
     <section id="services" className="relative pt-32 pb-32 bg-secondary/50 border-y border-border overflow-hidden">
-      {/* Background Asset 2 - Tech Grid - Bottom Left Asymmetry */}
+      {/* Background Asset 2 - Tech Grid - Responsive Optimized */}
       <div
-        className="absolute -bottom-[20%] -left-[10%] w-[80%] h-[120%] opacity-[0.08] dark:opacity-[0.12] pointer-events-none z-0"
+        className="absolute bottom-0 left-0 w-full lg:w-[80%] h-full lg:h-[120%] opacity-[0.04] lg:opacity-[0.08] dark:opacity-[0.06] lg:dark:opacity-[0.12] pointer-events-none z-0"
         style={{
-          maskImage: 'radial-gradient(circle at 20% 70%, black, transparent 75%)',
-          WebkitMaskImage: 'radial-gradient(circle at 20% 70%, black, transparent 75%)'
+          maskImage: 'radial-gradient(circle at center, black, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, black, transparent 80%)'
         }}
       >
         <Image
           src="/background-ornaments/2.png"
           alt="Tech Grid Background"
           fill
-          className="object-cover mix-blend-multiply dark:mix-blend-overlay rotate-[-2deg]"
+          className="relative w-full h-full object-cover object-center lg:object-left-bottom mix-blend-multiply dark:mix-blend-overlay rotate-[-2deg]"
         />
       </div>
 
