@@ -18,7 +18,7 @@ export async function sendQuoteAction(formData: FormData) {
     try {
         // 1. Send Notification to webdevstudioHQ
         const notification = await resend.emails.send({
-            from: "webdevstudioHQ <onboarding@resend.dev>",
+            from: "webdevstudioHQ <hello@webdevstudiohq.online>",
             to: "webdevstudiohq@gmail.com",
             subject: "NEW Project Quote Request",
             html: `
@@ -42,7 +42,7 @@ export async function sendQuoteAction(formData: FormData) {
 
         // 3. Send Auto-Reply to Customer
         const autoReply = await resend.emails.send({
-            from: "webdevstudioHQ Portfolio <onboarding@resend.dev>",
+            from: "webdevstudioHQ <hello@webdevstudiohq.online>",
             to: email,
             subject: "We’ve Received Your Request | webdevstudioHQ",
             html: htmlTemplate,
