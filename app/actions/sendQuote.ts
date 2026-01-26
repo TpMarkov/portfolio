@@ -17,7 +17,7 @@ export async function sendQuoteAction(formData: FormData) {
 
     try {
         // 1. Send Notification to webdevstudioHQ
-        await resend.emails.send({
+        const notification = await resend.emails.send({
             from: "webdevstudioHQ <onboarding@resend.dev>",
             to: "webdevstudiohq@gmail.com",
             subject: "NEW Project Quote Request",
@@ -32,21 +32,32 @@ export async function sendQuoteAction(formData: FormData) {
       `,
         });
 
+        if (notification.error) {
+            console.error("Notification Email Error:", notification.error);
+        }
+
         // 2. Read HTML Template for Auto-Reply
         const templatePath = path.join(process.cwd(), "app/constants/auto-reply-email-template.html");
         const htmlTemplate = await fs.readFile(templatePath, "utf-8");
 
         // 3. Send Auto-Reply to Customer
-        await resend.emails.send({
+        const autoReply = await resend.emails.send({
             from: "webdevstudioHQ Portfolio <onboarding@resend.dev>",
             to: email,
             subject: "We’ve Received Your Request | webdevstudioHQ",
             html: htmlTemplate,
         });
 
+        if (autoReply.error) {
+            console.error("Auto-Reply Email Error:", autoReply.error);
+            // If the error is specifically that we're in trial/onboarding mode, it won't throw, 
+            // but the email won't be sent to unverified addresses.
+            return { success: false, error: autoReply.error.message };
+        }
+
         return { success: true };
     } catch (error) {
-        console.error("Server Action Error:", error);
-        return { success: false, error: "Failed to send emails" };
+        console.error("Server Action Exception:", error);
+        return { success: false, error: "System failed to process the request" };
     }
 }
