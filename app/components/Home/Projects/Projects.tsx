@@ -47,19 +47,19 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="pt-16 pb-16 bg-background">
+    <section id="projects" className="pt-24 pb-24 bg-secondary/50 border-y border-border">
       <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-foreground mb-16">
         Featured <span className="text-primary">Projects</span>
       </h2>
 
-      <div className="w-[90%] xl:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="w-[90%] xl:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, index) => {
           const isExpanded = expandedProjects.includes(index);
 
           return (
             <article
               key={index}
-              className="group flex flex-col bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2"
+              className="group flex flex-col bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               {/* Project Image */}
               <Link

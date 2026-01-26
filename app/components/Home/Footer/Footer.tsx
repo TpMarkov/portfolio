@@ -25,8 +25,8 @@ const Footer = () => {
     ];
 
     return (
-        <footer id="footer" className="bg-muted/50 border-t border-border mt-20">
-            <div className="w-[90%] xl:w-[80%] mx-auto py-12">
+        <footer id="footer" className="bg-background border-t border-border mt-0">
+            <div className="w-[90%] xl:w-[80%] mx-auto py-20">
                 {/* Top Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
                     {/* Logo and Brand */}

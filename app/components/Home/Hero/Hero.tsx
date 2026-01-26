@@ -52,10 +52,9 @@ const Hero = () => {
     >
       <ParticlesHero />
       <div className="relative z-10 flex flex-col items-center max-w-5xl mx-auto px-4">
-        {/* Logo with Glow Effect */}
+        {/* Clean Logo Container */}
         <div ref={logoRef} className="mb-12 relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-primary via-purple-600 to-primary rounded-full blur-2xl opacity-50 animate-pulse"></div>
-          <div className="relative bg-background/80 backdrop-blur-sm p-8 rounded-full border-4 border-primary shadow-2xl">
+          <div className="relative bg-card p-8 rounded-2xl border border-border transition-shadow duration-500 hover:shadow-xl">
             <Image
               src="/images/webdevstudiohq-logo.png"
               alt="webdevstudioHQ"
@@ -68,52 +67,52 @@ const Hero = () => {
         </div>
 
         <div ref={textRef} className="text-center px-4 w-full">
-          <h1 className="hero-text text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-4">
+          <h1 className="hero-text text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-4">
             <span className="block mb-2">Welcome to</span>
-            <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-600 to-primary animate-gradient">
+            <span className="text-primary uppercase tracking-tighter">
               webdevstudioHQ
             </span>
           </h1>
 
-          <h2 className="hero-text mt-8 text-xl sm:text-3xl font-medium flex flex-col sm:flex-row items-center justify-center gap-2 text-muted-foreground flex-wrap">
-            <span>Your Partner in</span>
-            <span className="text-primary font-bold">
+          <h2 className="hero-text mt-8 text-xl sm:text-2xl font-semibold flex flex-col sm:flex-row items-center justify-center gap-2 text-muted-foreground flex-wrap">
+            <span>Specializing in</span>
+            <span className="text-foreground">
               <Typewriter
                 options={{
                   strings: [
-                    "Web Development",
-                    "Digital Solutions",
-                    "Modern Design",
-                    "Full-Stack Apps",
+                    "High-End Web Design",
+                    "Custom Software",
+                    "Agency-Grade UX/UI",
+                    "Full-Stack Systems",
                   ],
                   autoStart: true,
                   loop: true,
-                  delay: 75,
-                  deleteSpeed: 70,
-                  wrapperClassName: "text-primary",
+                  delay: 60,
+                  deleteSpeed: 50,
+                  wrapperClassName: "text-primary font-bold",
                 }}
               />
             </span>
           </h2>
 
-          <p className="hero-text mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We craft exceptional digital experiences that drive results.
-            From concept to deployment, we bring your vision to life with cutting-edge technology.
+          <p className="hero-text mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+            We deliver sophisticated digital products for forward-thinking brands.
+            Blending technical precision with creative excellence.
           </p>
         </div>
 
         <div className="hero-btn mt-12 flex flex-wrap gap-4 justify-center">
           <Link href="#projects">
-            <button className="group relative px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/50 hover:scale-105 active:scale-95">
-              <span className="relative z-10 flex items-center gap-2">
-                View Our Work
-                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            <button className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg shadow-primary/10">
+              <span className="flex items-center gap-2">
+                Explore Work
+                <FaArrowRight className="text-sm" />
               </span>
             </button>
           </Link>
           <Link href="#footer">
-            <button className="group relative px-8 py-4 bg-secondary text-secondary-foreground font-semibold rounded-full overflow-hidden transition-all duration-300 hover:bg-secondary/80 hover:scale-105 active:scale-95 border-2 border-border">
-              <span className="relative z-10">Get In Touch</span>
+            <button className="px-8 py-4 bg-background text-foreground font-bold rounded-lg border border-border transition-all duration-300 hover:bg-muted active:scale-95">
+              <span>Get Concept</span>
             </button>
           </Link>
         </div>

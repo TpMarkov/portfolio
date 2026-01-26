@@ -3,7 +3,7 @@ import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   return (
-    <div id="services" className="pt-16 pb-16 bg-muted/20">
+    <section id="services" className="pt-24 pb-24 bg-secondary/50 border-y border-border">
       <h1 className="text-foreground text-center text-2xl md:text-4xl xl:text-5xl font-bold">
         Collaborate with brand <br /> and agencies to create <br /> impactful
         results
@@ -30,7 +30,7 @@ const Services = () => {
           description="Write efficient, maintainable code to bring digital ideas to life across platforms"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

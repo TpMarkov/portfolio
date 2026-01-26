@@ -3,26 +3,18 @@ import React from "react";
 
 const About = () => {
     return (
-        <section className="relative py-20 bg-gradient-to-b from-background via-muted/30 to-background overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-                <div className="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
-                <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
-            </div>
-
+        <section className="relative py-24 bg-secondary/50 border-y border-border overflow-hidden">
             <div className="relative z-10 w-[90%] xl:w-[80%] mx-auto">
-                <div className="flex flex-col md:flex-row items-center gap-12 bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-8 md:p-12 shadow-xl">
+                <div className="flex flex-col md:flex-row items-center gap-12 bg-card border border-border rounded-lg p-8 md:p-12 transition-shadow duration-500 hover:shadow-2xl">
                     {/* Image Section */}
                     <div className="flex-shrink-0">
                         <div className="relative">
-                            {/* Decorative ring */}
-                            <div className="absolute -inset-2 bg-gradient-to-r from-primary to-purple-600 rounded-full blur-md opacity-75 animate-pulse"></div>
-                            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
+                            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden border border-border shadow-soft">
                                 <Image
                                     src="/images/image (1).jpg"
                                     alt="Profile"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                                     sizes="(max-width: 768px) 192px, 224px"
                                     priority
                                 />

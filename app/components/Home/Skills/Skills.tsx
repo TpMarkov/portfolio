@@ -43,24 +43,31 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div id="skills" className="text-foreground pt-16 pb-16 bg-muted/30">
-      <h1 className="text-foreground text-center text-2xl md:text-4xl xl:text-5xl font-bold">
-        My <span className="text-primary">Skills</span>
-      </h1>
-      <div className="flex flex-wrap justify-center gap-6 mt-16">
-        {skills.map((skill) => {
-          return (
-            <Tilt key={skill.name} scale={1.5} transitionSpeed={400}>
-              <div className="bg-card text-center w-40 h-48 rounded-3xl flex flex-col items-center justify-center shadow-lg transition hover:scale-105 border border-border">
-                <div className="text-5xl mb-4 text-foreground/80">{skill.icon}</div>
-                <p className="text-2xl font-semibold text-foreground">{skill.percentage}%</p>
-                <p className="text-primary mt-1 font-medium">{skill.name}</p>
+    <section id="skills" className="pt-24 pb-24 bg-background">
+      <div className="w-[90%] sm:w-[80%] mx-auto">
+        <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-extrabold text-foreground mb-16 uppercase tracking-tight">
+          Core <span className="text-primary font-black">Expertise</span>
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          {skills.map((skill) => (
+            <Tilt key={skill.name} scale={1.05} transitionSpeed={400} className="flex justify-center">
+              <div className="bg-card w-full max-w-[160px] p-8 rounded-xl flex flex-col items-center justify-center border border-border shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="text-4xl mb-4 text-primary">
+                  {skill.icon}
+                </div>
+                <p className="text-xl font-bold text-foreground">
+                  {skill.percentage}%
+                </p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mt-2 font-bold">
+                  {skill.name}
+                </p>
               </div>
             </Tilt>
-          );
-        })}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
