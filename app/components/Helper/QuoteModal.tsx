@@ -7,6 +7,8 @@ import { FaPaperPlane, FaSpinner } from "react-icons/fa";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
+import { sendQuoteAction } from "../../actions/sendQuote";
+
 type Props = {
     isOpen: boolean;
     onClose: () => void;
@@ -25,20 +27,11 @@ const QuoteModal = ({ isOpen, onClose }: Props) => {
         setStatus("loading");
 
         const formData = new FormData(e.currentTarget);
-        // Add Web3Forms access key
-        formData.append("access_key", "11f84ace-446b-49ef-92f7-08448e28074a"); // TODO: User should replace this
-        formData.append("subject", "New Project Quote Request from webdevstudioHQ");
-        formData.append("from_name", "webdevstudioHQ Portfolio");
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData,
-            });
+            const result = await sendQuoteAction(formData);
 
-            const data = await response.json();
-
-            if (data.success) {
+            if (result.success) {
                 setStatus("success");
             } else {
                 setStatus("error");
