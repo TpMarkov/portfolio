@@ -6,12 +6,10 @@ import Projects from "./Projects/Projects";
 import Skills from "./Skills/Skills";
 import About from "./About/About";
 import Footer from "./Footer/Footer";
-import { OrnamentShapes } from "../Helper/Ornaments";
 
 const Home = () => {
   return (
     <div className="overflow-hidden relative">
-      <OrnamentShapes />
       <Hero />
       <Services />
       <Resume />

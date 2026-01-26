@@ -2,77 +2,87 @@ import React from "react";
 import ResumeCard from "./ResumeCard";
 import { FaCodepen, FaDatabase, FaReact } from "react-icons/fa";
 import { HiBadgeCheck } from "react-icons/hi";
+import Image from "next/image";
 
 const Resume = () => {
   return (
-    <section id="resume" className="pt-24 pb-24 bg-background border-b border-border">
-      <div className="w-[90%] sm:w-[85%] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8">
-          {/* Work part */}
-          <div>
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
-                Work <span className="text-primary">Experience</span>
-              </h2>
-              <div className="h-px flex-1 bg-border"></div>
+    <section id="resume" className="relative pt-24 pb-24 bg-background border-b border-border overflow-hidden">
+      {/* Background Asset 2 - Grid Tech */}
+      <div className="absolute inset-0 opacity-[0.05] dark:opacity-10 pointer-events-none z-0">
+        <Image
+          src="/background-ornaments/2.png"
+          alt="Tech Grid"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="relative z-10 w-[90%] xl:w-[85%] mx-auto">
+        <div className="flex flex-col lg:flex-row items-baseline gap-4 mb-12">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-foreground uppercase italic shrink-0">
+            Career <span className="text-primary not-italic">&</span> Journey
+          </h2>
+          <div className="h-px flex-1 bg-border hidden lg:block"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          {/* Experience Header + Cards */}
+          <div className="xl:col-span-1 space-y-4">
+            <div className="px-4 py-2 bg-primary/10 border-l-4 border-primary inline-block mb-2">
+              <span className="text-xs font-black uppercase tracking-widest text-primary">Experience</span>
             </div>
-            <div className="grid grid-cols-1 gap-2">
-              <ResumeCard Icon={FaCodepen} role="Full-Stack Developer" />
-              <ResumeCard Icon={FaReact} role="Front-End Developer" />
-              <ResumeCard Icon={FaDatabase} role="Back-End Developer" />
-            </div>
+            <ResumeCard Icon={FaCodepen} role="Full-Stack Dev" date="Active" />
+            <ResumeCard Icon={FaReact} role="Front-End Dev" />
+            <ResumeCard Icon={FaDatabase} role="Back-End Dev" />
           </div>
 
-          {/* Education */}
-          <div>
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
-                Academic <span className="text-primary">Journey</span>
-              </h2>
-              <div className="h-px flex-1 bg-border"></div>
+          {/* Education Header + Cards (Spans 3 columns on XL) */}
+          <div className="xl:col-span-3 space-y-4">
+            <div className="px-4 py-2 bg-secondary border-l-4 border-muted-foreground inline-block mb-2">
+              <span className="text-xs font-black uppercase tracking-widest text-muted-foreground">Education</span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
               <ResumeCard
                 Icon={HiBadgeCheck}
                 location={true}
                 role="Alpha JS Track"
                 description="Teleric Academy"
-                date="Jan 2025 - July 2025"
+                date="2025"
               />
               <ResumeCard
                 Icon={HiBadgeCheck}
                 location={true}
                 role="JS Advanced"
-                description="Software University"
-                date="Dec 2024"
+                description="SoftUni"
+                date="2024"
               />
               <ResumeCard
                 Icon={HiBadgeCheck}
                 role="JS Fundamentals"
-                description="Software University"
+                description="SoftUni"
                 location={true}
-                date="Sep 2024"
+                date="2024"
               />
               <ResumeCard
                 Icon={HiBadgeCheck}
                 role="HTML & CSS"
                 location={true}
-                description="Software University"
-                date="Nov 2024"
+                description="SoftUni"
+                date="2024"
               />
               <ResumeCard
                 Icon={HiBadgeCheck}
                 role="B. Logistics"
                 location={true}
                 description="NMU Veliko Turnovo"
-                date="2011 - 2014"
+                date="2014"
               />
               <ResumeCard
                 Icon={HiBadgeCheck}
                 location={true}
                 role="Languages School"
                 description="Exarch Joseph"
-                date="2006 - 2011"
+                date="2011"
               />
             </div>
           </div>

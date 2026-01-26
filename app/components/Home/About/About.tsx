@@ -3,66 +3,80 @@ import React from "react";
 
 const About = () => {
     return (
-        <section className="relative py-24 bg-secondary/50 border-y border-border overflow-hidden">
+        <section className="relative py-32 bg-secondary/50 border-y border-border overflow-hidden">
+            {/* Background Asset 4 - Global Tech */}
+            <div className="absolute top-0 right-0 h-full w-[40%] opacity-[0.08] dark:opacity-15 pointer-events-none z-0">
+                <Image
+                    src="/background-ornaments/4.png"
+                    alt="Global Tech"
+                    fill
+                    className="object-contain object-right"
+                />
+            </div>
             <div className="relative z-10 w-[90%] xl:w-[80%] mx-auto">
-                <div className="flex flex-col md:flex-row items-center gap-12 bg-card border border-border rounded-lg p-8 md:p-12 transition-shadow duration-500 hover:shadow-2xl">
-                    {/* Image Section */}
-                    <div className="flex-shrink-0">
-                        <div className="relative">
-                            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden border border-border shadow-soft">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+                    {/* Image Section - Spans 5 columns - Shifted */}
+                    <div className="lg:col-span-5 flex justify-center lg:justify-start">
+                        <div className="relative group">
+                            {/* Decorative architectural anchors */}
+                            <div className="absolute -top-6 -left-6 w-24 h-24 border-t-2 border-l-2 border-primary/30 z-0"></div>
+                            <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-2 border-r-2 border-primary/30 z-0"></div>
+
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-border shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
                                 <Image
                                     src="/images/image (1).jpg"
                                     alt="Profile"
                                     fill
-                                    className="object-cover transition-transform duration-700 hover:scale-105"
-                                    sizes="(max-width: 768px) 192px, 224px"
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 256px, 320px"
                                     priority
                                 />
                             </div>
                         </div>
                     </div>
 
-                    {/* Content Section */}
-                    <div className="flex-1 text-center md:text-left">
-                        <div className="mb-6">
-                            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                                Let's Build Something <span className="text-primary">Amazing</span>
+                    {/* Content Section - Spans 7 columns */}
+                    <div className="lg:col-span-7">
+                        <div className="mb-10">
+                            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-foreground mb-6 leading-tight uppercase italic">
+                                We craft <br />
+                                <span className="text-primary not-italic">Digital Magic</span>
                             </h2>
-                            <div className="h-1 w-20 bg-gradient-to-r from-primary to-purple-600 mx-auto md:mx-0"></div>
+                            <p className="text-muted-foreground text-xl mb-8 leading-relaxed font-semibold opacity-90">
+                                Full-Stack Developer specializing in modern web technologies. Experienced in building
+                                high-performance applications with React, Next.js, Node.js, and cloud platforms.
+                                Passionate about creating exceptional user experiences and scalable solutions.
+                            </p>
                         </div>
 
-                        <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                            Full-Stack Developer specializing in modern web technologies. Experienced in building
-                            high-performance applications with React, Next.js, Node.js, and cloud platforms.
-                            Passionate about creating exceptional user experiences and scalable solutions.
-                        </p>
-
-                        {/* Quick Stats */}
-                        <div className="grid grid-cols-3 gap-4 mb-8">
-                            <div className="text-center p-4 bg-secondary/50 rounded-lg">
-                                <div className="text-2xl md:text-3xl font-bold text-primary">8+</div>
-                                <div className="text-xs md:text-sm text-muted-foreground">Projects</div>
+                        {/* Quick Stats - Asymmetrical Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                            <div className="p-6 bg-card border border-border rounded-xl flex flex-col items-center sm:items-start group hover:border-primary/50 transition-colors">
+                                <div className="text-4xl font-black text-primary mb-1 tracking-tighter italic">8+</div>
+                                <div className="text-xs uppercase tracking-widest text-muted-foreground font-black">Success Projects</div>
                             </div>
-                            <div className="text-center p-4 bg-secondary/50 rounded-lg">
-                                <div className="text-2xl md:text-3xl font-bold text-primary">Full-Stack</div>
-                                <div className="text-xs md:text-sm text-muted-foreground">Developer</div>
+                            <div className="p-6 bg-card border border-border rounded-xl flex flex-col items-center sm:items-start group hover:border-primary/50 transition-colors sm:translate-y-4">
+                                <div className="text-4xl font-black text-primary mb-1 tracking-tighter italic">Full</div>
+                                <div className="text-xs uppercase tracking-widest text-muted-foreground font-black">Stack Focus</div>
                             </div>
-                            <div className="text-center p-4 bg-secondary/50 rounded-lg">
-                                <div className="text-2xl md:text-3xl font-bold text-primary">Modern</div>
-                                <div className="text-xs md:text-sm text-muted-foreground">Tech Stack</div>
+                            <div className="p-6 bg-card border border-border rounded-xl flex flex-col items-center sm:items-start group hover:border-primary/50 transition-colors">
+                                <div className="text-4xl font-black text-primary mb-1 tracking-tighter italic">Mod</div>
+                                <div className="text-xs uppercase tracking-widest text-muted-foreground font-black">Modern Tech Bundle</div>
                             </div>
                         </div>
 
-                        {/* Brand Logo */}
-                        <div className="flex items-center justify-center md:justify-start gap-3 opacity-60">
+                        {/* Brand Signature */}
+                        <div className="flex items-center gap-4 pt-4 border-t border-border w-fit">
                             <Image
                                 src="/images/webdevstudiohq-logo.png"
                                 alt="webdevstudioHQ"
-                                width={32}
-                                height={32}
-                                className="object-contain"
+                                width={40}
+                                height={40}
+                                className="object-contain grayscale opacity-50 transition-opacity hover:opacity-100"
                             />
-                            <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                            <div className="h-4 w-px bg-border"></div>
+                            <span className="text-xs font-black text-muted-foreground uppercase tracking-[0.3em]">
                                 webdevstudio<span className="text-primary">HQ</span>
                             </span>
                         </div>

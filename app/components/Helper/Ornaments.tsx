@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export const GridPattern = ({ className }: { className?: string }) => (
     <div
@@ -12,37 +13,54 @@ export const GridPattern = ({ className }: { className?: string }) => (
     />
 );
 
-export const GeometricShape = ({ className, type = "square" }: { className?: string, type?: "square" | "circle" | "triangle" }) => (
-    <div
-        className={`absolute border border-primary/20 pointer-events-none z-[-1] ${className} ${type === "circle" ? "rounded-full" : ""
-            }`}
-        style={type === "triangle" ? { clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)", borderWidth: "1px" } : {}}
-    />
-);
-
 export const OrnamentShapes = () => (
     <>
         <GridPattern className="text-foreground" />
 
-        {/* Subtle geometric accents */}
-        <GeometricShape type="square" className="w-24 h-24 top-[10%] left-[5%] rotate-12" />
-        <GeometricShape type="circle" className="w-32 h-32 top-[15%] right-[10%] opacity-50" />
-        <GeometricShape type="square" className="w-16 h-16 top-[40%] left-[2%] -rotate-6 border-dashed" />
+        {/* Global Assets for Depth */}
 
-        {/* Section separators or anchors */}
-        <div className="absolute top-[800px] right-0 w-32 h-px bg-gradient-to-l from-primary/30 to-transparent pointer-events-none" />
-        <div className="absolute top-[1600px] left-0 w-32 h-px bg-gradient-to-r from-primary/30 to-transparent pointer-events-none" />
+        {/* Ornament 1 - Sinuous Blue Waves */}
+        <div className="absolute top-[5%] right-0 w-[60%] h-[400px] pointer-events-none z-[-1] opacity-20 dark:opacity-30 mix-blend-screen overflow-hidden">
+            <Image
+                src="/background-ornaments/1.png"
+                alt="Ornament 1"
+                fill
+                className="object-cover object-right"
+            />
+        </div>
 
-        <GeometricShape type="circle" className="w-48 h-48 top-[2500px] right-[-24px] opacity-30 border-2" />
-        <GeometricShape type="square" className="w-20 h-20 top-[3200px] left-[10%] rotate-45 border-primary/10" />
+        {/* Ornament 2 - Grid Tech Floor - for Resume / Experience Area */}
+        <div className="absolute top-[20%] left-0 w-full h-[600px] pointer-events-none z-[-1] opacity-10 dark:opacity-20 mix-blend-overlay overflow-hidden">
+            <Image
+                src="/background-ornaments/2.png"
+                alt="Ornament 2"
+                fill
+                className="object-cover"
+            />
+        </div>
 
-        {/* Subtle Dots pattern for specific areas */}
-        <div
-            className="absolute top-[1200px] left-[5%] w-40 h-40 opacity-[0.05] pointer-events-none"
-            style={{
-                backgroundImage: "radial-gradient(var(--primary) 1px, transparent 1px)",
-                backgroundSize: "10px 10px"
-            }}
-        />
+        {/* Ornament 3 - Abstract Wave - for Projects Area */}
+        <div className="absolute top-[50%] left-[-10%] w-[50%] h-[500px] pointer-events-none z-[-1] opacity-10 dark:opacity-20 mix-blend-screen overflow-hidden">
+            <Image
+                src="/background-ornaments/3.png"
+                alt="Ornament 3"
+                fill
+                className="object-cover object-left"
+            />
+        </div>
+
+        {/* Ornament 4 - Global Tech / Earth - for Footer / Contact Area */}
+        <div className="absolute bottom-[2%] right-[-5%] w-[40%] h-[600px] pointer-events-none z-[-1] opacity-10 dark:opacity-20 mix-blend-lighten overflow-hidden">
+            <Image
+                src="/background-ornaments/4.png"
+                alt="Ornament 4"
+                fill
+                className="object-contain object-right"
+            />
+        </div>
+
+        {/* Subtle Geometry to maintain professional structure */}
+        <div className="absolute top-[1200px] right-[10%] w-px h-64 bg-gradient-to-b from-primary/30 to-transparent z-[-1]" />
+        <div className="absolute top-[2400px] left-[10%] w-px h-64 bg-gradient-to-b from-primary/30 to-transparent z-[-1]" />
     </>
 );

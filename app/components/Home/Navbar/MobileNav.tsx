@@ -17,19 +17,19 @@ const MobileNav = ({ showNav, closeNav }: Props) => {
       ></div>
       {/* navlinks */}
       <div
-        className={`text-white fixed justify-center flex ${navOpen} flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-cyan-800 space-y-6 z-[100050] right-0`}
+        className={`text-foreground fixed justify-center flex ${navOpen} flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-card border-l border-border space-y-6 z-[100050] right-0 p-12`}
       >
         {NavLinks.map((el) => {
           return (
-            <Link key={el.id} href={el.url}>
-              <p className="text-white w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px]">
+            <Link key={el.id} href={el.url} onClick={closeNav}>
+              <p className="text-foreground w-fit text-2xl font-black uppercase tracking-tighter italic border-b-2 border-primary pb-1 hover:text-primary transition-colors cursor-pointer">
                 {el.label}
               </p>
             </Link>
           );
         })}
         <IoMdClose
-          className="absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6"
+          className="absolute top-8 right-8 w-10 h-10 cursor-pointer text-foreground hover:text-primary transition-colors"
           onClick={closeNav}
         />
       </div>

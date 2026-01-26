@@ -55,26 +55,26 @@ const Nav = ({ openNav }: Props) => {
   return (
     <div
       ref={navRef}
-      className={`transition-all ${navBg ? "bg-background/80 backdrop-blur-md shadow-md" : "fixed"
-        } duration-200 h-[12vh] z-[1000] fixed w-full top-0`}
+      className={`transition-all duration-300 h-[10vh] sm:h-[12vh] z-[1000] fixed w-full top-0 flex items-center ${navBg ? "bg-background/80 backdrop-blur-md shadow-md" : "bg-transparent"
+        }`}
     >
       <div className="flex items-center h-full justify-between w-[90%] mx-auto">
         {/* {LOGO} */}
-        <div className="flex items-center space-x-2 hover:cursor-pointer">
+        <Link href="#home" className="flex items-center space-x-2 hover:cursor-pointer group">
           <Image width={40} height={40} src="/images/webdevstudiohq-logo.png" alt="webdevstudioHQ logo" className="object-contain" />
-          <h2 className="text-foreground font-bold text-xl uppercase tracking-wider hidden md:block">
+          <h2 className="text-foreground font-bold text-xl uppercase tracking-wider hidden md:block group-hover:text-primary transition-colors">
             webdevstudio<span className="text-primary">HQ</span>
           </h2>
-        </div>
+        </Link>
         {/* Navlinks */}
         <div className="hidden lg:flex items-center space-x-10">
           {NavLinks.map((el) => (
             <Link
               key={el.id}
-              className="text-base hover:text-primary text-foreground/80 font-medium transition-all relative group"
-              href={el.url}
+              className="text-sm uppercase tracking-widest hover:text-primary text-foreground font-black transition-all relative group cursor-pointer"
+              href={`${el.url}`}
             >
-              <p>{el.label}</p>
+              {el.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}

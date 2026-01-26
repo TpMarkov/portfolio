@@ -1,34 +1,61 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
+import Image from "next/image";
 
 const Services = () => {
   return (
-    <section id="services" className="pt-24 pb-24 bg-secondary/50 border-y border-border">
-      <h1 className="text-foreground text-center text-2xl md:text-4xl xl:text-5xl font-bold">
-        Collaborate with brand <br /> and agencies to create <br /> impactful
-        results
-      </h1>
-      <div className="w-[90%] sm:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 mt-20 items-center">
-        <ServiceCard
-          icon="/images/s1.png"
-          name="UI and UX"
-          description="Designing clean, intuitive interfaces focused on usability and user satisfaction"
+    <section id="services" className="relative pt-32 pb-32 bg-secondary/50 border-y border-border overflow-hidden">
+      {/* Background Asset 1 - Blue Waves */}
+      <div className="absolute inset-x-0 top-0 h-full opacity-20 dark:opacity-30 pointer-events-none z-0">
+        <Image
+          src="/background-ornaments/1.png"
+          alt="Sinuous Background"
+          fill
+          className="object-cover opacity-60"
         />
-        <ServiceCard
-          icon="/images/s2.png"
-          name="Web Apps"
-          description="Building responsive and functional web applications that deliver smooth user experiences"
-        />
-        <ServiceCard
-          icon="/images/s3.png"
-          name="Design & Creative"
-          description="Creating visually engaging designs that combine creativity with purpose and clarity"
-        />
-        <ServiceCard
-          icon="/images/s4.png"
-          name="Development"
-          description="Write efficient, maintainable code to bring digital ideas to life across platforms"
-        />
+      </div>
+
+      <div className="relative z-10 w-[90%] xl:w-[80%] mx-auto">
+        <div className="max-w-2xl text-left mb-20 translate-x-[-2%]">
+          <h1 className="text-foreground text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none italic">
+            Our <span className="text-primary not-italic">Competencies</span>
+          </h1>
+          <p className="mt-4 text-muted-foreground font-semibold text-lg max-w-lg">
+            Delivering high-performance digital solutions through specialized engineering and creative strategy.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Asymmetrical shifts */}
+          <div className="lg:translate-y-0">
+            <ServiceCard
+              icon="/images/s1.png"
+              name="UI and UX"
+              description="Designing clean, intuitive interfaces focused on usability and user satisfaction"
+            />
+          </div>
+          <div className="lg:translate-y-8">
+            <ServiceCard
+              icon="/images/s2.png"
+              name="Frontend Development"
+              description="Building responsive, interactive web applications using modern frameworks"
+            />
+          </div>
+          <div className="lg:translate-y-0">
+            <ServiceCard
+              icon="/images/s3.png"
+              name="Backend Support"
+              description="Robust server-side logic and database management for scalable platforms"
+            />
+          </div>
+          <div className="lg:translate-y-8">
+            <ServiceCard
+              icon="/images/s4.png"
+              name="SEO Specialists"
+              description="Optimizing web presence to increase visibility and drive organic traffic"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

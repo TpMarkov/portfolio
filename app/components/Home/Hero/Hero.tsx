@@ -51,31 +51,24 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center text-foreground overflow-hidden flex-col bg-background py-20"
     >
       <ParticlesHero />
-      <div className="relative z-10 flex flex-col items-center max-w-5xl mx-auto px-4">
-        {/* Clean Logo Container */}
-        <div ref={logoRef} className="mb-12 relative">
-          <div className="relative bg-card p-8 rounded-2xl border border-border transition-shadow duration-500 hover:shadow-xl">
-            <Image
-              src="/images/webdevstudiohq-logo.png"
-              alt="webdevstudioHQ"
-              width={120}
-              height={120}
-              className="object-contain grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer"
-              priority
-            />
+      <div className="relative z-10 w-[90%] xl:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Text Content - Spans 7 columns */}
+        <div ref={textRef} className="lg:col-span-7 text-left">
+          <div className="inline-block px-4 py-2 border border-primary/20 bg-primary/5 rounded-full mb-6 scale-90 translate-x-[-5%] transition-transform hover:translate-x-0 duration-500">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest leading-none">
+              Web & Design Studio
+            </span>
           </div>
-        </div>
 
-        <div ref={textRef} className="text-center px-4 w-full">
-          <h1 className="hero-text text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-4">
-            <span className="block mb-2">Welcome to</span>
-            <span className="text-primary uppercase tracking-tighter">
-              webdevstudioHQ
+          <h1 className="hero-text text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-foreground mb-6 leading-[0.9]">
+            <span className="block opacity-60">Elevate your</span>
+            <span className="text-primary uppercase">
+              Brand Identity
             </span>
           </h1>
 
-          <h2 className="hero-text mt-8 text-xl sm:text-2xl font-semibold flex flex-col sm:flex-row items-center justify-center gap-2 text-muted-foreground flex-wrap">
-            <span>Specializing in</span>
+          <h2 className="hero-text mt-8 text-xl sm:text-2xl font-bold text-muted-foreground flex flex-wrap gap-x-3">
+            <span>Engineering</span>
             <span className="text-foreground">
               <Typewriter
                 options={{
@@ -89,32 +82,52 @@ const Hero = () => {
                   loop: true,
                   delay: 60,
                   deleteSpeed: 50,
-                  wrapperClassName: "text-primary font-bold",
+                  wrapperClassName: "text-primary font-black",
                 }}
               />
             </span>
           </h2>
 
-          <p className="hero-text mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+          <p className="hero-text mt-10 text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed font-semibold opacity-90">
             We deliver sophisticated digital products for forward-thinking brands.
             Blending technical precision with creative excellence.
           </p>
+
+          <div className="hero-btn mt-12 flex flex-wrap gap-4">
+            <Link href="#projects">
+              <button className="px-10 py-5 bg-primary text-primary-foreground font-black rounded-lg transition-all duration-300 hover:opacity-90 active:scale-95 shadow-2xl shadow-primary/20 uppercase tracking-tighter italic">
+                <span className="flex items-center gap-3">
+                  Check Cases
+                  <FaArrowRight className="text-sm" />
+                </span>
+              </button>
+            </Link>
+            <Link href="#footer">
+              <button className="px-10 py-5 bg-transparent text-foreground font-black rounded-lg border-2 border-border transition-all duration-300 hover:bg-muted active:scale-95 uppercase tracking-tighter italic">
+                <span>Start Project</span>
+              </button>
+            </Link>
+          </div>
         </div>
 
-        <div className="hero-btn mt-12 flex flex-wrap gap-4 justify-center">
-          <Link href="#projects">
-            <button className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg shadow-primary/10">
-              <span className="flex items-center gap-2">
-                Explore Work
-                <FaArrowRight className="text-sm" />
-              </span>
-            </button>
-          </Link>
-          <Link href="#footer">
-            <button className="px-8 py-4 bg-background text-foreground font-bold rounded-lg border border-border transition-all duration-300 hover:bg-muted active:scale-95">
-              <span>Get Concept</span>
-            </button>
-          </Link>
+        {/* Logo/Asset - Spans 5 columns - Offset for asymmetry */}
+        <div ref={logoRef} className="lg:col-span-5 flex justify-center lg:justify-end relative">
+          <div className="relative group">
+            {/* Geometric shadow ornament */}
+            <div className="absolute -inset-8 border border-primary/10 rounded-2xl rotate-12 transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110"></div>
+            <div className="absolute -inset-4 border border-primary/20 rounded-2xl -rotate-6 transition-transform duration-700 group-hover:rotate-0"></div>
+
+            <div className="relative bg-card p-12 rounded-3xl border-2 border-border shadow-[40px_40px_80px_rgba(0,0,0,0.05)] dark:shadow-[40px_40px_80px_rgba(0,0,0,0.2)]">
+              <Image
+                src="/images/webdevstudiohq-logo.png"
+                alt="webdevstudioHQ"
+                width={180}
+                height={180}
+                className="object-contain grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer scale-110"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
