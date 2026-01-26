@@ -1,19 +1,27 @@
 "use client";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect, Suspense } from "react";
 import Typewriter from "typewriter-effect";
 import { FaArrowRight } from "react-icons/fa";
 import ParticlesHero from "./ParticleBackground";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import QuoteModal from "../../Helper/QuoteModal";
 
-const Hero = () => {
+const HeroContent = () => {
+  const searchParams = useSearchParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const containerRef = useRef(null);
   const logoRef = useRef(null);
   const textRef = useRef(null);
+
+  useEffect(() => {
+    if (searchParams.get("quote") === "true") {
+      setIsModalOpen(true);
+    }
+  }, [searchParams]);
 
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -155,5 +163,11 @@ const Hero = () => {
     </div>
   );
 };
+
+const Hero = () => (
+  <Suspense fallback={null}>
+    <HeroContent />
+  </Suspense>
+);
 
 export default Hero;

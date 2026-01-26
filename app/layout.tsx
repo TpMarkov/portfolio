@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "./components/Home/Navbar/ResponsiveNav";
 import { Providers } from "./providers";
+import CookieConsent from "./components/Helper/CookieConsent";
 
 const font = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Providers>
           <ResponsiveNav />
           {children}
+          <CookieConsent />
         </Providers>
       </body>
     </html>

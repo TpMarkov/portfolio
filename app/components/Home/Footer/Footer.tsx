@@ -20,7 +20,7 @@ const Footer = () => {
         {
             name: "Email",
             icon: <FaEnvelope className="w-6 h-6" />,
-            url: "mailto:markowcvetan@gmail.com",
+            url: "mailto:webdevstudiohq@gmail.com",
         },
     ];
 
@@ -86,9 +86,12 @@ const Footer = () => {
 
                 {/* Bottom Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-                    <p>
-                        © {currentYear} webdevstudioHQ. All rights reserved.
-                    </p>
+                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                        <p>© {currentYear} webdevstudioHQ. All rights reserved.</p>
+                        <Link href="/privacy-policy" className="hover:text-primary transition-colors font-bold uppercase tracking-widest text-[10px]">
+                            Privacy Policy
+                        </Link>
+                    </div>
                     <p className="text-xs">
                         Built with{" "}
                         <span className="text-primary font-semibold">Next.js</span> &{" "}

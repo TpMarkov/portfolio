@@ -2,6 +2,7 @@ import React from "react";
 import Certificates from "../components/Certificates/Certificates";
 import IssuerSection from "../components/Certificates/IssuerSection";
 import Image from "next/image";
+import Link from "next/link";
 
 const CertificatesPage = () => {
     return (
@@ -63,12 +64,12 @@ const CertificatesPage = () => {
                         Ready to build with a <br />
                         <span className="text-white/80 not-italic">certified expert?</span>
                     </h2>
-                    <a
-                        href="/#footer"
+                    <Link
+                        href="/?quote=true"
                         className="inline-block px-10 py-5 bg-white text-primary rounded-xl font-black uppercase tracking-widest hover:scale-105 transition-transform"
                     >
                         Start Your Project
-                    </a>
+                    </Link>
                 </div>
             </section>
         </main>
