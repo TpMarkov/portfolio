@@ -9,6 +9,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ThemeSwitcher from "../../Helper/ThemeSwitcher";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 type Props = {
   openNav: () => void;
@@ -81,17 +82,36 @@ const Nav = ({ openNav }: Props) => {
         </div>
         <div className="flex items-center space-x-4">
           <ThemeSwitcher />
+
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-primary hover:bg-primary/90 transition-all duration-300 text-primary-foreground font-bold shadow-lg hover:shadow-primary/25 uppercase tracking-tighter italic">
+                Get Started
+              </button>
+            </SignInButton>
+          </SignedOut>
+
+          <SignedIn>
+            <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: "w-10 h-10 border-2 border-primary/20 hover:border-primary/50 transition-all"
+                }
+              }}
+            />
+          </SignedIn>
+
           <button
-            className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-primary hover:bg-primary/90 transition-all duration-300 text-primary-foreground flex items-center space-x-2 shadow-lg hover:shadow-primary/25"
+            className="hidden sm:flex px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-secondary border border-border hover:bg-muted transition-all duration-300 text-foreground items-center space-x-2 shadow-sm"
             onClick={(e) => {
               e.preventDefault();
               return downloadFileAtURL(PDF_FILE_URL);
             }}
           >
             <Link href="https://app.enhancv.com/share/89888e8a/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic">
-              <div className="w-full flex items-center gap-x-5">
+              <div className="w-full flex items-center gap-x-5 uppercase tracking-widest font-bold text-[10px]">
                 <FaDownload />
-                Download CV
+                Resume
               </div>
             </Link>
           </button>
