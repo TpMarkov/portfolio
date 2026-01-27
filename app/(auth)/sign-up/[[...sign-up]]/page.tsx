@@ -65,32 +65,32 @@ export default function Page() {
             </div>
 
             {/* Right Side: Authentication */}
-            <div className="flex-1 flex flex-col items-center justify-center p-8 lg:p-16 relative">
+            <div className="flex-1 flex flex-col items-center justify-center p-6 sm:p-10 lg:p-16 relative">
                 {/* Back Link */}
                 <Link
                     href="/"
-                    className="absolute top-8 right-8 lg:top-12 lg:right-12 flex items-center space-x-2 text-sm font-black uppercase tracking-widest text-muted-foreground hover:text-primary transition-all group z-20"
+                    className="absolute top-6 right-6 sm:top-8 sm:right-8 lg:top-12 lg:right-12 flex items-center space-x-2 text-[10px] sm:text-xs font-black uppercase tracking-widest text-muted-foreground hover:text-primary transition-all group z-20"
                 >
-                    <HiArrowLongLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+                    <HiArrowLongLeft className="w-5 h-5 sm:w-6 h-6 group-hover:-translate-x-1 transition-transform" />
                     <span>Back to Website</span>
                 </Link>
 
-                {/* Mobile Header */}
-                <div className="lg:hidden flex flex-col items-center mb-16 text-center">
-                    <div className="bg-primary/10 p-3 rounded-2xl mb-4">
-                        <Image width={60} height={60} src="/images/webdevstudiohq-logo.png" alt="logo" />
+                {/* Mobile Header (Refined sizing) */}
+                <div className="lg:hidden flex flex-col items-center mb-8 sm:mb-12 text-center">
+                    <div className="bg-primary/10 p-3 rounded-2xl mb-3 shadow-lg shadow-primary/5">
+                        <Image width={40} height={40} src="/images/webdevstudiohq-logo.png" alt="logo" className="w-[32px] h-[32px] sm:w-[40px] sm:h-[40px]" />
                     </div>
-                    <h1 className="text-3xl font-black uppercase tracking-tighter italic">
+                    <h1 className="text-xl sm:text-2xl font-black uppercase tracking-tighter italic opacity-90">
                         webdevstudio<span className="text-primary">HQ</span>
                     </h1>
                 </div>
 
-                <div className="w-full max-w-[440px] space-y-10">
+                <div className="w-full max-w-[400px] sm:max-w-[440px] space-y-8 sm:space-y-10">
                     <div className="text-center lg:text-left space-y-2">
-                        <h1 className="text-5xl font-black uppercase tracking-tighter italic">
+                        <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter italic leading-none">
                             Create <span className="text-primary">Account</span>
                         </h1>
-                        <p className="text-muted-foreground font-bold italic text-lg opacity-80">
+                        <p className="text-muted-foreground font-bold italic text-sm sm:text-lg opacity-80 decoration-primary/30 underline-offset-4 decoration-2">
                             "Fast registration for a premium digital experience."
                         </p>
                     </div>
@@ -112,15 +112,15 @@ export default function Page() {
                                 card: "bg-transparent shadow-none border-none p-0 w-full",
                                 headerTitle: "hidden",
                                 headerSubtitle: "hidden",
-                                formButtonPrimary: "bg-primary hover:bg-primary/90 text-sm font-black uppercase tracking-widest italic shadow-xl shadow-primary/20 h-10 transition-all rounded-2xl border-none",
-                                socialButtonsBlockButton: "border-border hover:bg-muted transition-all rounded-2xl h-10 bg-secondary/50",
-                                socialButtonsBlockButtonText: "font-bold italic uppercase tracking-widest text-[10px] text-foreground",
+                                formButtonPrimary: "bg-primary hover:bg-primary/90 text-[10px] sm:text-xs font-black uppercase tracking-widest italic shadow-xl shadow-primary/20 h-12 transition-all rounded-2xl border-none",
+                                socialButtonsBlockButton: "border-border hover:bg-muted transition-all rounded-2xl h-12 bg-secondary/50",
+                                socialButtonsBlockButtonText: "font-bold italic uppercase tracking-widest text-[9px] sm:text-[10px] text-foreground",
                                 formFieldLabel: "text-foreground font-black uppercase tracking-[0.2em] text-[10px] mb-3 opacity-60",
-                                formFieldInput: "bg-secondary/50 border-none focus:ring-2 focus:ring-primary/50 transition-all rounded-2xl h-14 px-6 italic font-bold",
+                                formFieldInput: "bg-secondary/50 border-none focus:ring-2 focus:ring-primary/50 transition-all rounded-2xl h-12 sm:h-14 px-5 sm:px-6 italic font-bold text-sm sm:text-base",
                                 footerActionLink: "text-primary hover:text-primary/80 font-black italic underline decoration-2 underline-offset-4",
                                 dividerLine: "bg-border/50",
-                                dividerText: "text-muted-foreground font-black text-[10px] uppercase tracking-[0.3em] px-6",
-                                formFieldAction: "text-primary hover:text-primary/80 font-black text-xs italic",
+                                dividerText: "text-muted-foreground font-black text-[9px] sm:text-[10px] uppercase tracking-[0.3em] px-4 sm:px-6",
+                                formFieldAction: "text-primary hover:text-primary/80 font-black text-[10px] sm:text-xs italic",
                                 identityPreviewText: "font-bold text-foreground",
                                 footerActionText: "font-semibold italic text-muted-foreground"
                             }
