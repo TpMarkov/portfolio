@@ -48,11 +48,19 @@ export const CERTIFICATES = [
   },
   {
     id: 2,
+    title: "JS Advanced",
+    issuer: "Software University",
+    image: "/certificates/softuni.png",
+    date: "2025",
+  },
+  {
+    id: 3,
     title: "Advanced THREE.JS Certificate",
     issuer: "Udemy",
     image: "/certificates/udemy-certificate.png",
     date: "2026",
   },
+
 ];
 
 export const ISSUERS = [
@@ -63,6 +71,11 @@ export const ISSUERS = [
   },
   {
     id: 2,
+    name: "Software University",
+    logo: "/logos/softuni-logo.png",
+  },
+  {
+    id: 3,
     name: "Telerik Academy",
     logo: "/logos/teleric-academy.png",
   },
