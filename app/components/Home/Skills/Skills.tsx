@@ -63,7 +63,7 @@ const techStack = [
   },
   {
     name: "Next.js",
-    logo: "/curosel-logos/nextjs-removebg-preview.png",
+    logo: "/curosel-logos/original-logos/next.svg",
   },
   {
     name: "TypeScript",
@@ -122,10 +122,9 @@ const Skills = () => {
       id="skills"
       className={`
         relative pt-32 pb-32 overflow-hidden
-        ${
-          designMode === "sap"
-            ? "bg-sap-base-bg"
-            : "bg-background border-b border-border"
+        ${designMode === "sap"
+          ? "bg-sap-base-bg"
+          : "bg-background border-b border-border"
         }
       `}
     >
@@ -183,11 +182,10 @@ const Skills = () => {
                     <p
                       className={`
                       mt-2 text-center leading-none
-                      ${
-                        designMode === "sap"
+                      ${designMode === "sap"
                           ? "text-xs font-medium text-sap-text-secondary tracking-normal"
                           : "text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-black"
-                      }
+                        }
                     `}
                     >
                       {skill.name}
