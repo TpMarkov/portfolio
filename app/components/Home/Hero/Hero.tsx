@@ -65,7 +65,7 @@ const HeroContent = () => {
       <div className="relative z-10 w-[90%] xl:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Text Content - Spans 7 columns */}
         <div ref={textRef} className="lg:col-span-7 text-left">
-          <div className="inline-block px-4 py-2 border border-primary/20 bg-primary/5 rounded-full mb-6 scale-90 translate-x-[-5%] transition-transform hover:translate-x-0 duration-500">
+          <div className="inline-block px-4 py-2 border border-primary/20 bg-primary/5 mb-6 scale-90 translate-x-[-5%] transition-transform hover:translate-x-0 duration-500">
             <span className="text-primary text-xs font-bold uppercase tracking-widest leading-none">
               Web & Design Studio
             </span>
@@ -106,7 +106,7 @@ const HeroContent = () => {
 
           <div className="hero-btn mt-12 flex flex-wrap gap-4">
             <Link href="#projects">
-              <button className="px-10 py-5 bg-primary text-primary-foreground font-black rounded-lg transition-all duration-300 hover:opacity-90 active:scale-95 shadow-2xl shadow-primary/20 uppercase tracking-tighter italic">
+              <button className="px-10 py-5 bg-primary text-primary-foreground font-black transition-all duration-300 hover:opacity-90 active:scale-95 shadow-2xl shadow-primary/20 uppercase tracking-tighter italic border border-primary">
                 <span className="flex items-center gap-3">
                   Check Cases
                   <FaArrowRight className="text-sm" />
@@ -115,7 +115,7 @@ const HeroContent = () => {
             </Link>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-10 py-5 bg-transparent text-foreground font-black rounded-lg border-2 border-border transition-all duration-300 hover:bg-muted active:scale-95 uppercase tracking-tighter italic cursor-pointer"
+              className="px-10 py-5 bg-transparent text-foreground font-black border border-border transition-all duration-300 hover:bg-muted active:scale-95 uppercase tracking-tighter italic cursor-pointer"
             >
               <span>Request Quote</span>
             </button>
@@ -125,10 +125,10 @@ const HeroContent = () => {
         {/* Logo/Asset - Spans 5 columns - Offset for asymmetry */}
         <div ref={logoRef} className="lg:col-span-5 flex justify-center lg:justify-end relative">
           <div className="relative group">
-            <div className="absolute -inset-8 border border-primary/10 rounded-2xl rotate-12 transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110"></div>
-            <div className="absolute -inset-4 border border-primary/20 rounded-2xl -rotate-6 transition-transform duration-700 group-hover:rotate-0"></div>
+            <div className="absolute -inset-8 border border-primary/10 transition-transform duration-700 group-hover:scale-105"></div>
+            <div className="absolute -inset-4 border border-primary/20 transition-transform duration-700"></div>
 
-            <div className="relative bg-card p-12 rounded-3xl border-2 border-border shadow-[40px_40px_80px_rgba(0,0,0,0.05)] dark:shadow-[40px_40px_80px_rgba(0,0,0,0.2)]">
+            <div className="relative bg-card p-12 border border-border shadow-[40px_40px_80px_rgba(0,0,0,0.05)] dark:shadow-[40px_40px_80px_rgba(0,0,0,0.2)]">
               <Image
                 src="/images/webdevstudiohq-logo.png"
                 alt="webdevstudioHQ"

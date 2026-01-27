@@ -85,7 +85,7 @@ const Nav = ({ openNav }: Props) => {
 
           <SignedOut>
             <Link href="/sign-up">
-              <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-primary hover:bg-primary/90 transition-all duration-300 text-primary-foreground font-bold shadow-lg hover:shadow-primary/25 uppercase tracking-tighter italic">
+              <button className="px-8 py-3.5 text-sm cursor-pointer bg-primary hover:bg-primary/90 transition-all duration-300 text-primary-foreground font-bold shadow-lg hover:shadow-primary/25 uppercase tracking-tighter italic border border-primary">
                 Get Started
               </button>
             </Link>
@@ -94,14 +94,16 @@ const Nav = ({ openNav }: Props) => {
           <SignedIn>
             <div className="flex items-center space-x-4">
               <SignOutButton>
-                <button className="text-[10px] font-bold uppercase tracking-widest border border-border px-4 py-2 rounded-lg hover:bg-secondary transition-all cursor-pointer italic text-muted-foreground hover:text-foreground">
+                <button className="text-[10px] font-bold uppercase tracking-widest border border-border px-4 py-2 hover:bg-secondary transition-all cursor-pointer italic text-muted-foreground hover:text-foreground">
                   Sign Out
                 </button>
               </SignOutButton>
               <UserButton
                 appearance={{
                   elements: {
-                    avatarBox: "w-10 h-10 border-2 border-primary/20 hover:border-primary/50 transition-all"
+                    avatarBox: "w-10 h-10 border-2 border-primary/20 hover:border-primary/50 transition-all rounded-none",
+                    userButtonTrigger: "rounded-none",
+                    userButtonPopoverCard: "rounded-none"
                   }
                 }}
               />
@@ -109,7 +111,7 @@ const Nav = ({ openNav }: Props) => {
           </SignedIn>
 
           <button
-            className="hidden sm:flex px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-secondary border border-border hover:bg-muted transition-all duration-300 text-foreground items-center space-x-2 shadow-sm"
+            className="hidden sm:flex px-8 py-3.5 text-sm cursor-pointer bg-secondary border border-border hover:bg-muted transition-all duration-300 text-foreground items-center space-x-2 shadow-sm"
             onClick={(e) => {
               e.preventDefault();
               return downloadFileAtURL(PDF_FILE_URL);

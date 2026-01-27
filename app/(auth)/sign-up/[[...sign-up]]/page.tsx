@@ -77,7 +77,7 @@ export default function Page() {
 
                 {/* Mobile Header (Refined sizing) */}
                 <div className="lg:hidden flex flex-col items-center mb-8 sm:mb-12 text-center">
-                    <div className="bg-primary/10 p-3 rounded-2xl mb-3 shadow-lg shadow-primary/5">
+                    <div className="bg-primary/10 p-3 mb-3 shadow-lg shadow-primary/5 border border-primary/10">
                         <Image width={40} height={40} src="/images/webdevstudiohq-logo.png" alt="logo" className="w-[32px] h-[32px] sm:w-[40px] sm:h-[40px]" />
                     </div>
                     <h1 className="text-xl sm:text-2xl font-black uppercase tracking-tighter italic opacity-90">
@@ -104,19 +104,20 @@ export default function Page() {
                                 colorText: isDark ? "#f1f5f9" : "#0f172a",
                                 colorInputBackground: isDark ? "#1e293b" : "#f1f5f9",
                                 colorInputText: isDark ? "#f1f5f9" : "#0f172a",
+                                borderRadius: "0",
                             },
                             layout: {
                                 logoPlacement: "none",
                             },
                             elements: {
-                                card: "bg-transparent shadow-none border-none p-0 w-full",
+                                card: "bg-transparent shadow-none border-none p-0 w-full rounded-none",
                                 headerTitle: "hidden",
                                 headerSubtitle: "hidden",
-                                formButtonPrimary: "bg-primary hover:bg-primary/90 text-[10px] sm:text-xs font-black uppercase tracking-widest italic shadow-xl shadow-primary/20 h-10 transition-all rounded-2xl border-none",
-                                socialButtonsBlockButton: "border-border hover:bg-muted transition-all rounded-2xl h-10 bg-secondary/50",
+                                formButtonPrimary: "bg-primary hover:bg-primary/90 text-[10px] sm:text-xs font-black uppercase tracking-widest italic shadow-xl shadow-primary/20 h-10 transition-all rounded-none border-none",
+                                socialButtonsBlockButton: "border-border hover:bg-muted transition-all rounded-none h-10 bg-secondary/50",
                                 socialButtonsBlockButtonText: "font-bold italic uppercase tracking-widest text-[9px] sm:text-[10px] text-foreground",
                                 formFieldLabel: "text-foreground font-black uppercase tracking-[0.2em] text-[10px] mb-3 opacity-60",
-                                formFieldInput: "bg-secondary/50 border-none focus:ring-2 focus:ring-primary/50 transition-all rounded-2xl h-10 sm:h-14 px-5 sm:px-6 italic font-bold text-sm sm:text-base",
+                                formFieldInput: "bg-secondary/50 border-none focus:ring-2 focus:ring-primary/50 transition-all rounded-none h-10 sm:h-14 px-5 sm:px-6 italic font-bold text-sm sm:text-base",
                                 footerActionLink: "text-primary hover:text-primary/80 font-black italic underline decoration-2 underline-offset-4",
                                 dividerLine: "bg-border/50",
                                 dividerText: "text-muted-foreground font-black text-[9px] sm:text-[10px] uppercase tracking-[0.3em] px-4 sm:px-6",
