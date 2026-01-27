@@ -9,7 +9,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ThemeSwitcher from "../../Helper/ThemeSwitcher";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton, SignOutButton } from "@clerk/nextjs";
 
 type Props = {
   openNav: () => void;
@@ -84,21 +84,28 @@ const Nav = ({ openNav }: Props) => {
           <ThemeSwitcher />
 
           <SignedOut>
-            <SignInButton mode="modal">
+            <Link href="/sign-up">
               <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-primary hover:bg-primary/90 transition-all duration-300 text-primary-foreground font-bold shadow-lg hover:shadow-primary/25 uppercase tracking-tighter italic">
                 Get Started
               </button>
-            </SignInButton>
+            </Link>
           </SignedOut>
 
           <SignedIn>
-            <UserButton
-              appearance={{
-                elements: {
-                  avatarBox: "w-10 h-10 border-2 border-primary/20 hover:border-primary/50 transition-all"
-                }
-              }}
-            />
+            <div className="flex items-center space-x-4">
+              <SignOutButton>
+                <button className="text-[10px] font-bold uppercase tracking-widest border border-border px-4 py-2 rounded-lg hover:bg-secondary transition-all cursor-pointer italic text-muted-foreground hover:text-foreground">
+                  Sign Out
+                </button>
+              </SignOutButton>
+              <UserButton
+                appearance={{
+                  elements: {
+                    avatarBox: "w-10 h-10 border-2 border-primary/20 hover:border-primary/50 transition-all"
+                  }
+                }}
+              />
+            </div>
           </SignedIn>
 
           <button

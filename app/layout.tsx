@@ -25,11 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${font.className} antialiased bg-background text-foreground`}>
-        <ClerkProvider appearance={{ baseTheme: dark }}>
+        <ClerkProvider>
           <Providers>
-            <ResponsiveNav />
             {children}
-            <CookieConsent />
           </Providers>
         </ClerkProvider>
       </body>
