@@ -260,7 +260,7 @@ const Skills = () => {
               <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background via-background/50 to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background via-background/50 to-transparent z-10 pointer-events-none" />
 
-              <div className="flex animate-marquee items-center gap-12 dark:contrast-80">
+              <div className="flex animate-marquee items-center gap-12 dark:contrast-70">
                 {[...techStack, ...techStack].map((tech, index) => (
                   <LogoItem
                     key={`${tech.name}-${index}`}
