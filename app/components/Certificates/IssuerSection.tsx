@@ -19,26 +19,21 @@ const IssuerSection = () => {
   if (!mounted) return null;
 
   const isDark = resolvedTheme === "dark";
-
-  // SAP mode adjustments
   const isSapMode = designMode === "sap";
-  const containerClass = isSapMode
-    ? "w-36 h-20 md:w-48 md:h-24 p-4"
-    : "w-48 h-24 md:w-64 md:h-32 p-8";
-  const logoSizes = isSapMode
-    ? "(max-width: 768px) 100px, 140px"
-    : "(max-width: 768px) 150px, 200px";
+
+  const containerClass = "w-36 h-20 md:w-48 md:h-24 p-4";
+  const logoSizes = "(max-width: 768px) 100px, 140px";
 
   return (
     <section
       className={`
-            py-20 relative overflow-hidden
-            ${
-              isSapMode
-                ? "bg-sap-base-bg border-t border-sap-border"
-                : "border-t border-border bg-secondary/30"
-            }
-        `}
+        py-20 relative overflow-hidden
+        ${
+          isSapMode
+            ? "bg-white border-t border-[#e5e7eb]"
+            : "border-t border-border bg-secondary/30"
+        }
+      `}
     >
       {/* Background ornament - hide in SAP mode */}
       {!isSapMode && (
@@ -57,10 +52,10 @@ const IssuerSection = () => {
           <div className="max-w-md">
             {isSapMode ? (
               <>
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4">
-                  Trusted <span className="text-sap-primary">Issuers</span>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#11181c] mb-4">
+                  Trusted <span className="text-[#0070f2]">Issuers</span>
                 </h2>
-                <p className="text-sap-text-secondary">
+                <p className="text-[#6b7280]">
                   These certificates are issued by world-renowned educational
                   institutions and industry leaders, ensuring the highest
                   standards of technical excellence.
@@ -85,26 +80,18 @@ const IssuerSection = () => {
             {ISSUERS.map((issuer) => (
               <div
                 key={issuer.id}
-                className={`
-                                    group relative transition-all duration-500 transform
-                                    ${
-                                      isSapMode
-                                        ? "hover:scale-105"
-                                        : "hover:scale-105"
-                                    }
-                                `}
+                className="group relative transition-all duration-500 transform hover:scale-105"
               >
                 <div
                   className={`
-                                    ${
-                                      isSapMode
-                                        ? "bg-sap-white border border-sap-border"
-                                        : "bg-card/70 backdrop-blur-md border border-border/50 group-hover:border-primary/30"
-                                    }
-                                    rounded-xl transition-all flex items-center justify-center shadow-sm
-                                    ${isSapMode ? "hover:shadow-md" : "hover:shadow-xl hover:shadow-primary/5"}
-                                    ${containerClass}
-                                `}
+                    rounded-xl transition-all flex items-center justify-center shadow-sm
+                    ${
+                      isSapMode
+                        ? "bg-white border border-[#e5e7eb] hover:shadow-md"
+                        : "bg-card/70 backdrop-blur-md border border-border/50 group-hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
+                    }
+                    ${containerClass}
+                  `}
                 >
                   <div className="relative w-full h-full transform transition-transform duration-500 group-hover:scale-110">
                     {issuer.logo ? (
@@ -113,7 +100,7 @@ const IssuerSection = () => {
                           src={issuer.logo}
                           alt={issuer.name}
                           fill
-                          className={`object-contain ${isSapMode ? "" : "dark:invert"}`}
+                          className="object-contain dark:invert"
                           sizes={logoSizes}
                         />
                       ) : (
@@ -128,13 +115,13 @@ const IssuerSection = () => {
                     ) : (
                       <div
                         className={`
-                                                absolute inset-0 flex items-center justify-center text-center transition-all duration-300
-                                                ${
-                                                  isSapMode
-                                                    ? "font-semibold text-sm text-sap-text-secondary group-hover:text-sap-primary"
-                                                    : "font-black text-2xl tracking-tighter text-muted-foreground group-hover:text-primary uppercase italic"
-                                                }
-                                            `}
+                          absolute inset-0 flex items-center justify-center text-center transition-all duration-300
+                          ${
+                            isSapMode
+                              ? "font-semibold text-sm text-[#6b7280] group-hover:text-[#0070f2]"
+                              : "font-black text-2xl tracking-tighter text-muted-foreground group-hover:text-primary uppercase italic"
+                          }
+                        `}
                       >
                         {issuer.name}
                       </div>

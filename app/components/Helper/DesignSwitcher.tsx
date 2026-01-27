@@ -52,26 +52,3 @@ const DesignSwitcher = () => {
 };
 
 export default DesignSwitcher;
-
-// Alternative: Compact version for navbar integration
-export const DesignSwitcherCompact = () => {
-  const { designMode, toggleDesignMode } = useDesignMode();
-
-  return (
-    <button
-      onClick={toggleDesignMode}
-      className={`
-        p-2 rounded-md transition-all duration-200
-        ${
-          designMode === "sap"
-            ? "bg-[#e5f1ff] text-[#0070f2] hover:bg-[#0070f2] hover:text-white"
-            : "bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
-        }
-      `}
-      aria-label={`Switch design mode`}
-      title={`Design: ${designMode === "original" ? "Original" : "SAP"}`}
-    >
-      <SiSap className={designMode === "sap" ? "text-xl" : "text-lg"} />
-    </button>
-  );
-};
