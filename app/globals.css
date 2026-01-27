@@ -19,7 +19,6 @@
     --color-border: var(--border);
 
     --animate-marquee: marquee 40s linear infinite;
-    --animate-marquee-reverse: marquee-reverse 40s linear infinite;
 
     @keyframes marquee {
         from {
@@ -27,7 +26,7 @@
         }
 
         to {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
 }

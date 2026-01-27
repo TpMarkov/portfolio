@@ -1,16 +1,18 @@
 import ResponsiveNav from "../components/Home/Navbar/ResponsiveNav";
 import CookieConsent from "../components/Helper/CookieConsent";
+import ScrollToTop from "../components/Helper/ScrollToTop";
 
 export default function MainLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <>
-            <ResponsiveNav />
-            {children}
-            <CookieConsent />
-        </>
-    );
+  return (
+    <>
+      <ResponsiveNav />
+      {children}
+      <ScrollToTop />
+      <CookieConsent />
+    </>
+  );
 }
