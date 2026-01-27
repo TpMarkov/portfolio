@@ -88,7 +88,7 @@ export default function Page() {
           <Link href="/" className="flex items-center space-x-3 group w-fit">
             <div
               className={`
-                            backdrop-blur-md p-2 rounded-lg border transition-transform group-hover:scale-105
+                            backdrop-blur-md px-3 rounded-lg border transition-transform group-hover:scale-105
                             ${isSap ? "bg-white/20 border-white/30" : "bg-white/10 border-white/20"}
                         `}
             >
@@ -97,7 +97,7 @@ export default function Page() {
                 height={40}
                 src="/images/webdevstudiohq-logo.png"
                 alt="logo"
-                className="object-contain"
+                className="object-contain grayscale contrast-100"
               />
             </div>
             <h1
