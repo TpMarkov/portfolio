@@ -239,51 +239,49 @@ export default function Page() {
 
           {isSap ? (
             /* SAP-style sign up form */
-            <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] p-8">
-              <SignUp
-                appearance={{
-                  baseTheme: isDark ? dark : undefined,
-                  variables: {
-                    colorPrimary: "#0070f2",
-                    colorBackground: "#ffffff",
-                    colorText: "#11181c",
-                    colorInputBackground: "#f5f5f5",
-                    colorInputText: "#11181c",
-                    borderRadius: "6px",
-                  },
-                  layout: {
-                    logoPlacement: "none",
-                  },
-                  elements: {
-                    card: "bg-transparent shadow-none border-none p-0 w-full rounded-none",
-                    headerTitle: "hidden",
-                    headerSubtitle: "hidden",
-                    formButtonPrimary:
-                      "bg-[#0070f2] hover:bg-[#0060d9] text-white font-medium tracking-normal shadow-sm h-10 transition-all rounded-md border-none w-full",
-                    socialButtonsBlockButton:
-                      "border-[#e5e7eb] hover:bg-[#f5f5f5] transition-all h-10 bg-white w-full rounded-md",
-                    socialButtonsBlockButtonText:
-                      "font-medium text-[#11181c] text-sm uppercase tracking-wide",
-                    formFieldLabel:
-                      "text-[#6b7280] font-medium text-xs uppercase tracking-wide mb-2",
-                    formFieldInput:
-                      "bg-[#f5f5f5] border border-[#e5e7eb] text-[#11181c] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#0070f2]/20 focus:border-[#0070f2] rounded-md h-10 px-4 text-sm",
-                    footerActionLink:
-                      "text-[#0070f2] hover:text-[#0060d9] font-medium text-sm",
-                    dividerLine: "bg-[#e5e7eb]",
-                    dividerText:
-                      "text-[#9ca3af] px-4 font-medium text-xs uppercase tracking-wide",
-                    formFieldAction:
-                      "text-[#0070f2] hover:text-[#0060d9] font-medium text-xs",
-                    identityPreviewText: "font-medium text-[#11181c]",
-                    footerActionText: "text-[#6b7280] font-medium text-sm",
-                    internalLogo: "hidden",
-                    rootBox: "font-sans",
-                    formFieldRow: "mb-4",
-                  },
-                }}
-              />
-            </div>
+            <SignUp
+              appearance={{
+                baseTheme: isDark ? dark : undefined,
+                variables: {
+                  colorPrimary: "#0070f2",
+                  colorBackground: "#ffffff",
+                  colorText: "#11181c",
+                  colorInputBackground: "#f5f5f5",
+                  colorInputText: "#11181c",
+                  borderRadius: "6px",
+                },
+                layout: {
+                  logoPlacement: "none",
+                },
+                elements: {
+                  card: "bg-transparent shadow-none border-none p-0 w-full rounded-none",
+                  headerTitle: "hidden",
+                  headerSubtitle: "hidden",
+                  formButtonPrimary:
+                    "bg-[#0070f2] hover:bg-[#0060d9] text-white font-medium tracking-normal shadow-sm h-10 transition-all rounded-md border-none w-full",
+                  socialButtonsBlockButton:
+                    "border-[#e5e7eb] hover:bg-[#f5f5f5] transition-all h-10 bg-white w-full rounded-md",
+                  socialButtonsBlockButtonText:
+                    "font-medium text-[#11181c] text-sm uppercase tracking-wide",
+                  formFieldLabel:
+                    "text-[#6b7280] font-medium text-xs uppercase tracking-wide mb-2",
+                  formFieldInput:
+                    "bg-[#f5f5f5] border border-[#e5e7eb] text-[#11181c] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#0070f2]/20 focus:border-[#0070f2] rounded-md h-10 px-4 text-sm",
+                  footerActionLink:
+                    "text-[#0070f2] hover:text-[#0060d9] font-medium text-sm",
+                  dividerLine: "bg-[#e5e7eb]",
+                  dividerText:
+                    "text-[#9ca3af] px-4 font-medium text-xs uppercase tracking-wide",
+                  formFieldAction:
+                    "text-[#0070f2] hover:text-[#0060d9] font-medium text-xs",
+                  identityPreviewText: "font-medium text-[#11181c]",
+                  footerActionText: "text-[#6b7280] font-medium text-sm",
+                  internalLogo: "hidden",
+                  rootBox: "font-sans",
+                  formFieldRow: "mb-4",
+                },
+              }}
+            />
           ) : (
             <SignUp
               appearance={{
