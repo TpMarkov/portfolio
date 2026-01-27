@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./sap-design.css";
 import ResponsiveNav from "./components/Home/Navbar/ResponsiveNav";
 import { Providers } from "./providers";
 import CookieConsent from "./components/Helper/CookieConsent";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import DesignSwitcher from "./components/Helper/DesignSwitcher";
 
 const font = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -24,10 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${font.className} antialiased bg-background text-foreground`}>
+      <body
+        className={`${font.className} antialiased bg-background text-foreground`}
+      >
         <ClerkProvider>
           <Providers>
             {children}
+            <DesignSwitcher />
+            <CookieConsent />
           </Providers>
         </ClerkProvider>
       </body>

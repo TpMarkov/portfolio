@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Import SAP Design System */
+@import "./sap-design.css";
+
 @theme {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -105,6 +108,40 @@
     --border: #27272a;
 }
 
+/* SAP Design Mode Overrides */
+[data-design-mode="sap"] {
+    /* Override CSS variables for SAP design mode */
+    --background: var(--sap-base-bg);
+    --foreground: var(--sap-text-primary);
+    --primary: var(--sap-primary);
+    --primary-foreground: var(--sap-white);
+    --secondary: var(--sap-neutral-bg);
+    --secondary-foreground: var(--sap-text-primary);
+    --accent: var(--sap-base-light);
+    --accent-foreground: var(--sap-text-primary);
+    --muted: var(--sap-neutral-bg);
+    --muted-foreground: var(--sap-text-secondary);
+    --card: var(--sap-white);
+    --card-foreground: var(--sap-text-primary);
+    --border: var(--sap-border);
+}
+
+[data-design-mode="sap"] .dark {
+    --background: var(--sap-base-bg);
+    --foreground: var(--sap-text-primary);
+    --primary: var(--sap-primary);
+    --primary-foreground: var(--sap-white);
+    --secondary: var(--sap-neutral-bg);
+    --secondary-foreground: var(--sap-text-primary);
+    --accent: var(--sap-base-light);
+    --accent-foreground: var(--sap-text-primary);
+    --muted: var(--sap-neutral-bg);
+    --muted-foreground: var(--sap-text-secondary);
+    --card: var(--sap-white);
+    --card-foreground: var(--sap-text-primary);
+    --border: var(--sap-border);
+}
+
 html {
     scroll-behavior: smooth;
     zoom: var(--app-zoom);
@@ -159,4 +196,89 @@ html {
 
 .dark .uc-privacy-policy strong {
     color: var(--foreground) !important;
+}
+
+/* SAP Design Mode - Component Overrides */
+[data-design-mode="sap"] {
+
+    /* Remove decorative elements in SAP mode */
+    .particle-background,
+    .hero-ornament,
+    .background-asset {
+        display: none !important;
+    }
+
+    /* SAP-style section spacing */
+    section {
+        padding-top: var(--sap-spacing-xxl) !important;
+        padding-bottom: var(--sap-spacing-xxl) !important;
+    }
+
+    /* SAP-style headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--sap-font-family) !important;
+        letter-spacing: -0.01em !important;
+    }
+
+    /* SAP-style buttons */
+    button {
+        border-radius: var(--sap-radius-m) !important;
+        font-family: var(--sap-font-family) !important;
+        font-weight: 600 !important;
+    }
+
+    /* SAP-style cards */
+    .card,
+    [class*="card"] {
+        border-radius: var(--sap-radius-l) !important;
+        box-shadow: var(--sap-shadow-1) !important;
+        border: 1px solid var(--sap-border) !important;
+    }
+
+    /* SAP-style inputs */
+    input,
+    textarea,
+    select {
+        border-radius: var(--sap-radius-m) !important;
+        border: 1px solid var(--sap-border) !important;
+    }
+
+    /* Remove italic styles in SAP mode */
+    .italic,
+    [class*="italic"] {
+        font-style: normal !important;
+    }
+
+    /* SAP-style links */
+    a {
+        font-weight: 500 !important;
+    }
+
+    /* SAP-style nav */
+    nav,
+    [class*="nav"] {
+        backdrop-filter: blur(8px) !important;
+    }
+
+    /* Remove uppercase transforms in SAP mode */
+    .uppercase,
+    [class*="uppercase"] {
+        text-transform: none !important;
+        letter-spacing: normal !important;
+    }
+}
+
+/* Responsive adjustments for SAP mode */
+@media (max-width: 768px) {
+    [data-design-mode="sap"] {
+        section {
+            padding-top: var(--sap-spacing-xl) !important;
+            padding-bottom: var(--sap-spacing-xl) !important;
+        }
+    }
 }
