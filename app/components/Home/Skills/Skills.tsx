@@ -38,6 +38,30 @@ const techStack = [
     logo: "/curosel-logos/react-removebg-preview.png",
   },
   {
+    name: "Gsap",
+    logo: "/curosel-logos/original-logos/GSAP_2023.webp",
+  },
+  {
+    name: "MongoDb Png",
+    logo: "/curosel-logos/original-logos/mongodb.png",
+  },
+  {
+    name: "Inngest Png",
+    logo: "/curosel-logos/original-logos/inngest.png",
+  },
+  {
+    name: "Clerk Png",
+    logo: "/curosel-logos/original-logos/clerk.png",
+  },
+  {
+    name: "Convex Svg",
+    logo: "/curosel-logos/original-logos/convex.svg",
+  },
+  {
+    name: "Prisma SVG",
+    logo: "/curosel-logos/original-logos/prisma-2.svg",
+  },
+  {
     name: "Next.js",
     logo: "/curosel-logos/nextjs-removebg-preview.png",
   },
