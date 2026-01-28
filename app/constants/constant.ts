@@ -31,6 +31,11 @@ export const NavLinks = [
   },
   {
     id: 7,
+    url: "/templates",
+    label: "Templates",
+  },
+  {
+    id: 8,
     url: "/#footer",
     label: "Contact",
   },
@@ -60,7 +65,6 @@ export const CERTIFICATES = [
     image: "/certificates/udemy-certificate.png",
     date: "2026",
   },
-
 ];
 
 export const ISSUERS = [
@@ -79,5 +83,4 @@ export const ISSUERS = [
     name: "Telerik Academy",
     logo: "/logos/teleric-academy.png",
   },
-
 ];

@@ -4,10 +4,12 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { IoMdClose, IoMdCheckmarkCircle } from "react-icons/io";
 import { FaPaperPlane, FaSpinner } from "react-icons/fa";
+import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { sendQuoteAction } from "../../actions/sendQuote";
 import { useDesignMode } from "@/app/context/DesignContext";
+import { templates, Template } from "@/app/constants/templates";
 
 type Props = {
   isOpen: boolean;
@@ -20,6 +22,10 @@ const QuoteModal = ({ isOpen, onClose }: Props) => {
   const modalRef = useRef(null);
   const overlayRef = useRef(null);
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
+    null,
+  );
+  const [showTemplateDropdown, setShowTemplateDropdown] = useState(false);
   const { designMode } = useDesignMode();
   const isSap = designMode === "sap";
 
@@ -244,6 +250,118 @@ const QuoteModal = ({ isOpen, onClose }: Props) => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Template Selection */}
+                <div className="relative">
+                  <label
+                    className={`
+                      block text-xs mb-2
+                      ${
+                        isSap
+                          ? "text-[#6b7280] font-medium uppercase tracking-[0.15em]"
+                          : "text-muted-foreground font-black uppercase tracking-widest"
+                      }
+                    `}
+                  >
+                    Select a Template (optional)
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setShowTemplateDropdown(!showTemplateDropdown)
+                    }
+                    className={`
+                      w-full border rounded-xl px-4 py-3 transition-all font-medium flex items-center justify-between
+                      ${
+                        isSap
+                          ? "bg-[#f5f5f5] border-[#e5e7eb] text-[#11181c] focus:outline-none focus:ring-2 focus:ring-[#0070f2]/50 focus:border-[#0070f2] rounded-md"
+                          : "bg-secondary/50 border-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-foreground italic rounded-none"
+                      }
+                    `}
+                    disabled={status === "loading"}
+                  >
+                    <span>
+                      {selectedTemplate
+                        ? selectedTemplate.title
+                        : "Choose a template from our collection..."}
+                    </span>
+                    {showTemplateDropdown ? (
+                      <HiChevronUp className="w-5 h-5" />
+                    ) : (
+                      <HiChevronDown className="w-5 h-5" />
+                    )}
+                  </button>
+
+                  {/* Dropdown */}
+                  {showTemplateDropdown && (
+                    <div
+                      className={`
+                        absolute z-50 w-full mt-2 max-h-60 overflow-y-auto rounded-xl shadow-lg
+                        ${
+                          isSap
+                            ? "bg-white border border-[#e5e7eb]"
+                            : "bg-card border border-border"
+                        }
+                      `}
+                    >
+                      {templates.map((template) => (
+                        <button
+                          key={template.id}
+                          type="button"
+                          onClick={() => {
+                            setSelectedTemplate(template);
+                            setShowTemplateDropdown(false);
+                          }}
+                          className={`
+                            w-full text-left px-4 py-3 transition-colors hover:bg-secondary/50 flex items-center gap-3
+                            ${
+                              selectedTemplate?.id === template.id
+                                ? isSap
+                                  ? "bg-[#0070f2]/10 text-[#0070f2]"
+                                  : "bg-primary/10 text-primary"
+                                : ""
+                            }
+                          `}
+                        >
+                          <div className="flex-1">
+                            <p
+                              className={`font-medium text-sm ${
+                                isSap ? "text-[#11181c]" : "text-foreground"
+                              }`}
+                            >
+                              {template.title}
+                            </p>
+                            <p
+                              className={`text-xs ${
+                                isSap
+                                  ? "text-[#6b7280]"
+                                  : "text-muted-foreground"
+                              }`}
+                            >
+                              {template.category} - {template.price}
+                            </p>
+                          </div>
+                          {selectedTemplate?.id === template.id && (
+                            <IoMdCheckmarkCircle
+                              className={`w-5 h-5 ${
+                                isSap ? "text-[#0070f2]" : "text-primary"
+                              }`}
+                            />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Hidden field for selected template */}
+                <input
+                  type="hidden"
+                  name="selected_template"
+                  value={
+                    selectedTemplate ? JSON.stringify(selectedTemplate) : ""
+                  }
+                />
+
                 <div>
                   <label
                     htmlFor="email"
