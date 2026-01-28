@@ -30,8 +30,8 @@ export const templates: Template[] = [
   {
     id: "saas-landing",
     title: "SaaS Landing Page",
-    url: "https://saas-landing-demo.vercel.app",
-    img: "/images/saas-landing.png",
+    url: "https://template-1-three-kohl.vercel.app",
+    img: "/template-images/1.png",
     description:
       "A high-converting landing page template for SaaS products. Includes pricing tables, feature sections, and testimonials.",
     category: "SaaS",
