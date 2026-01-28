@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import Templates from "../../components/Templates/Templates";
 import { Metadata } from "next";
@@ -10,6 +9,32 @@ export const metadata: Metadata = {
 };
 
 const TemplatesPage = () => {
+  //TODO : When ready isrendering should be deleted and conditional rendering should be deleted too
+  const isrendering = false;
+
+  if (!isrendering) {
+    return (
+      <div
+        className={`
+          min-h-screen
+          ${
+            process.env.NEXT_PUBLIC_DESIGN_MODE === "sap"
+              ? "bg-sap-base-bg"
+              : "bg-background"
+          }
+        `}
+      >
+        <div className="pt-32 pb-12 px-4">
+          <div className="w-[90%] xl:w-[80%] mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4">
+              <span className="text-primary">Under construction</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className={`
@@ -77,7 +102,7 @@ const TemplatesPage = () => {
                 }
               `}
             >
-              Don&apos;t See What You&apos;re Looking For?
+              Don't See What You're Looking For?
             </h2>
             <p
               className={`
@@ -90,7 +115,7 @@ const TemplatesPage = () => {
               `}
             >
               We can create a custom template tailored to your specific needs.
-              Get in touch and let&apos;s build something amazing together.
+              Get in touch and let's build something amazing together.
             </p>
             <Link
               href="/#footer"
